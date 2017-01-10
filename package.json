@@ -28,6 +28,7 @@
     "react-motion": "^0.4.7",
     "react-router": "^3.0.0",
     "strictify": "^0.2.0",
+    "svg-reactify": "^2.0.0",
     "uglify-js": "^2.6.1",
     "underscore": "^1.8.3",
     "watchify": "^3.7.0"
@@ -57,6 +58,12 @@
   "browserify": {
     "transform": [
       [
+        "svg-reactify",
+        {
+          "default": "image"
+        }
+      ],
+      [
         "babelify",
         {
           "presets": [
@@ -71,6 +78,12 @@
   },
   "watchify": {
     "transform": [
+      [
+        "svg-reactify",
+        {
+          "default": "image"
+        }
+      ],
       [
         "babelify",
         {

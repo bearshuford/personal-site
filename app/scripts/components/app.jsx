@@ -4,6 +4,7 @@ import Radium from 'radium';
 import { Link } from 'react-router';
 
 var Github = require('react-icons/lib/go/mark-github');
+var Mail   = require('react-icons/lib/io/paper-airplane');
 
 //TODO import Transition from 'react-inline-transition-group';
 
@@ -13,7 +14,6 @@ const styles = {
     flexFlow: 'column nowrap',
     alignItems: 'flex-start'
   },
-
   header: {
     display: 'flex',
     flexFlow: 'row wrap',
@@ -22,18 +22,15 @@ const styles = {
     width: '100%',
     lineHeight: '70px',
     padding: '0 16px',
-
     fontFamily: '"Raleway", sans-serif',
     fontSize: 48,
     lineHeight: '70px',
     marginTop: 6,
     marginBottom: 6
   },
-
   name: {
     padding: 5
   },
-
   navItem: {
     transition: 'all .3s ease',
     WebkitFontSmoothing: 'antialiased',
@@ -49,13 +46,18 @@ const styles = {
   activeLink: {
     transition: 'all .3s ease',
     color: 'black',
-
-   fontSize: 56,
-   cursor: 'default'
+    fontSize: 56,
+    cursor: 'default'
   },
   period: {
     fontSize: 72,
-    padding: '0 2px'
+    padding: '0 4px'
+  },
+  icons: {
+    display: 'flex',
+    flexFlow: 'row nowrap',
+    justifyContent: 'space-between',
+    width: 112
   }
 
 };
@@ -103,21 +105,35 @@ var Nav = React.createClass({
           </span>
         </div>
 
-        <a
-          className="nav-icon"
-          style={{lineHeight: '42px'}}
-          target="_blank"
-          href="https://www.github.com/bearshuford"
-        >
-          <Github color="#3185FC" size={36}/>
-        </a>
+        <div style={styles.icons}>
+
+          <a
+            className="nav-icon"
+            style={{lineHeight: '42px'}}
+            href="mailto:bearshuford@me.com"
+          >
+            <Mail color="#3185FC" size={36}/>
+          </a>
+
+          <a
+            className="nav-icon"
+            style={{lineHeight: '42px'}}
+            target="_blank"
+            href="https://www.github.com/bearshuford"
+          >
+            <Github color="#3185FC" size={36}/>
+          </a>
+
+
+        </div>
+
+
       </div>
     );
   }
 
 });
 
-Nav = Radium(Nav);
 
 
 
