@@ -24,6 +24,7 @@
     "radium-grid": "^2.0.3",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
+    "react-icons": "^2.2.3",
     "react-motion": "^0.4.7",
     "react-router": "^3.0.0",
     "strictify": "^0.2.0",
@@ -36,20 +37,15 @@
     "fonts": "cp -r app/fonts/ dist/fonts/",
     "scss": "sass --style compressed --update app/styles:dist/css",
     "autoprefixer": "postcss -u autoprefixer -r dist/css/*.css",
-
     "lint": "eslint app/scripts",
     "browserify": "browserify app/scripts/index.jsx | uglifyjs -c > dist/js/bundle.js",
-
     "imagemin": "imagemin app/images dist/images -p",
     "favicon": "cp app/favicon.ico dist/",
-
     "build:css": "npm run scss && npm run autoprefixer",
     "build:js": "npm run lint && npm run browserify",
     "build:images": "npm run imagemin && npm run favicon",
     "build": "npm run html && npm run fonts && npm run build:css && npm run build:js && npm run build:images",
-
     "deploy": "npm run build && git-directory-deploy --directory dist/",
-
     "watch:scss": "sass --watch app/styles:dist/css",
     "watch:js": "watchify app/scripts/index.jsx -o dist/js/bundle.js",
     "watch:html": "onchange 'app/**/*.html' -- npm run html",
@@ -90,7 +86,11 @@
     "jQuery": "$",
     "underscore": "_"
   },
-  "strictify":{
-      "exclude": [".handlebars", ".hbs", "json"]
+  "strictify": {
+    "exclude": [
+      ".handlebars",
+      ".hbs",
+      "json"
+    ]
   }
 }
