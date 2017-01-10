@@ -46,7 +46,7 @@ const styles = {
   activeLink: {
     transition: 'all .3s ease',
     color: 'black',
-    fontSize: 56,
+    fontSize: 58,
     cursor: 'default'
   },
   period: {
