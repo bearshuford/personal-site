@@ -9,8 +9,8 @@ const styles = {
       paddingTop: 10
    },
    top: {
-     backgroundColor: '#26C6DA',
-    //  color: 'white',
+     backgroundColor: '#00C853',
+      color: 'white',
      display: 'flex',
      flexFlow: 'row wrap-reverse',
      justifyContent: 'space-around',
@@ -19,7 +19,7 @@ const styles = {
     //  alignSelf: 'center',
      marginTop: 0,
      marginBottom: 18,
-     padding: '18px 0'
+     padding: '16px 0'
 
    },
    details: {
@@ -33,13 +33,13 @@ const styles = {
     //  alignSelf: 'flex-start'
    },
    title: {
-     padding: 0,
+     padding: '0 16px',
      margin: 0
    },
    images: {
       display: 'flex',
       flexFlow: 'row wrap',
-      maxWidth: 800,
+      maxWidth: 720,
       minWidth: 20,
       alignItems: 'center'
    },
@@ -52,6 +52,7 @@ const styles = {
    description: {
      paddingTop: 12,
      paddingBottom: 0,
+     padding: ' 12px 12px 0 12px',
      fontSize: 'calc(12px + 1vw)',
      fontWeight: 300
    }
