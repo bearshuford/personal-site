@@ -1,5 +1,5 @@
 import React from 'react';
-import Radium from 'radium';
+import _ from 'underscore';
 
 import { Link } from 'react-router';
 
@@ -11,6 +11,25 @@ var Github = require('react-icons/lib/go/mark-github');
 var Mail   = require('react-icons/lib/io/paper-airplane');
 
 //TODO import Transition from 'react-inline-transition-group';
+
+
+
+
+export const palette = {
+  about: {
+    primary: '#26C6DA',
+    cn: "nav",                  //className
+    iconCn: "nav-icon"
+  },
+  traveltunes: {
+    primary: '#1976D2',
+    secondary: '#00C853',
+    cn: "tt-header nav",
+    iconCn: "tt-header"
+  },
+
+}
+
 
 const styles = {
   app: {
@@ -77,15 +96,24 @@ var Nav = React.createClass({
   },
 
   render: function() {
+    var theme = this.props.theme;
+
+    var linkStyle = _.clone(styles.link);
+    linkStyle.color = theme.primary;
+
+
+
+
+
     return (
       <div style={styles.header}>
         <div style={styles.name}>
           <span key="nav1" style={styles.navItem}>
             <Link
-              className="nav"
+              className={theme.cn}
               key="about"
               to="about"
-              style={styles.link}
+              style={linkStyle}
               activeStyle={styles.activeLink}
               activeClassName="active-nav"
             >
@@ -100,7 +128,7 @@ var Nav = React.createClass({
               className="nav"
               key="projects"
               to="projects"
-              style={styles.link}
+              style={linkStyle}
               activeStyle={styles.activeLink}
               activeClassName="active-nav"
             >
@@ -112,20 +140,20 @@ var Nav = React.createClass({
         <div style={styles.icons}>
 
           <a
-            className="nav-icon"
+            className={theme.iconCn}
             style={{lineHeight: '42px'}}
             href="mailto:bearshuford@me.com"
           >
-            <Mail color="#26C6DA" size={36}/>
+            <Mail color={theme.primary} size={36}/>
           </a>
 
           <a
-            className="nav-icon"
+            className={theme.iconCn}
             style={{lineHeight: '42px'}}
             target="_blank"
             href="https://www.github.com/bearshuford"
           >
-            <Github color="#26C6DA" size={36}/>
+            <Github color={theme.primary} size={36}/>
           </a>
 
 
@@ -141,13 +169,28 @@ var Nav = React.createClass({
 
 
 
- var App = React.createClass({
+var App = React.createClass({
+
+  getTheme: function(path){
+
+      if (path.indexOf("/projects/traveltunes") >= 0)
+       return palette.traveltunes;
+      else if (path.indexOf("/about") >= 0)
+        return palette.about;
+
+      else return palette.about;
+
+
+  },
 
   render: function() {
+    console.log('App', this.props.children, this.props);
+    var theme = this.getTheme(this.props.location.pathname);
+
     return (
       <div style={styles.app}>
 
-        <Nav/>
+        <Nav theme={theme}/>
 
         {this.props.children}
 

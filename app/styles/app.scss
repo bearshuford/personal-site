@@ -1,3 +1,4 @@
+
 *,
 *::before,
 *::after {
@@ -23,18 +24,30 @@ body {
 }
 
 
-.nav-icon{
+.nav-icon,.tt-nav, .tt-header{
   position: relative;
   transition: all 0.3s ease 0s;
   padding: 6px;
 }
 
-.nav-icon:hover{
+
+.active-nav{
+  svg{
+    color: black !important;
+    transition: all 0.3s ease 0s;
+  }
+  transform: scale(1.2);
+  transition: all 0.3s ease 0s;
+}
+
+.nav-icon:hover, .tt-nav:hover, .tt-header:hover{
   -webkit-transform: scale(1.2);
   transform: scale(1.2);
 }
 
-.nav:before, .nav-icon:before {
+
+.nav:before, .nav-icon:before,
+.tt-nav:before, .tt-header:before {
   content: "";
   position: absolute;
   width: 100%;
@@ -49,11 +62,27 @@ body {
   transition: all 0.3s ease 0s;
 }
 
+.tt-nav:before {
+  background-color: #00C853;
+}
+
+.tt-header:before {
+  background-color: #1976D2;
+}
+
+
+
+
+
+
+
+
+
 .nav:hover {
   font-size: 58px;
 }
 
-.nav:hover:before, .nav-icon:hover:before {
+.nav:hover:before, .nav-icon:hover:before, .tt-nav:hover:before, .tt-header:hover:before{
   visibility: visible;
   -webkit-transform: scaleX(1);
   transform: scaleX(1);

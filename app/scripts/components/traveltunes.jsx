@@ -1,5 +1,21 @@
 import React from 'react';
 
+import {Link} from 'react-router';
+import Icon from 'react-icon-base';
+
+import { MorphReplace } from 'react-svg-morph';
+
+var Images = require('react-icons/lib/io/images');
+import Github   from 'react-icons/lib/io/code';
+var Repo   = require('react-icons/lib/go/repo');
+var Tools   = require('react-icons/lib/io/hammer');
+var Info   = require('react-icons/lib/io/informatcircled');
+var Demo   = require('react-icons/lib/go/link-external');
+
+
+
+import {palette} from './app.jsx';
+
 const styles = {
    tt: {
       display: 'flex',
@@ -9,7 +25,7 @@ const styles = {
       paddingTop: 10
    },
    top: {
-     backgroundColor: '#00C853',
+     backgroundColor: palette.traveltunes.primary,
       color: 'white',
      display: 'flex',
      flexFlow: 'row wrap-reverse',
@@ -19,7 +35,7 @@ const styles = {
     //  alignSelf: 'center',
      marginTop: 0,
      marginBottom: 18,
-     padding: '16px 0'
+     padding: '16px 8px'
 
    },
    details: {
@@ -39,7 +55,7 @@ const styles = {
    images: {
       display: 'flex',
       flexFlow: 'row wrap',
-      maxWidth: 720,
+      maxWidth: 800,
       minWidth: 20,
       alignItems: 'center'
    },
@@ -55,8 +71,38 @@ const styles = {
      padding: ' 12px 12px 0 12px',
      fontSize: 'calc(12px + 1vw)',
      fontWeight: 300
+   },
+   projectNav: {
+     display: 'flex',
+     flexFlow: 'row nowrap',
+     width: '100%',
+    //  maxWidth: 800,
+    //  minWidth: 100,
+     alignItems: 'center',
+     justifyContent: 'center',
+
+     padding: 6
+   },
+   projectIcons: {
+     display: 'flex',
+     flexFlow: 'row wrap',
+     width: '100%',
+    maxWidth: 600,
+    //  minWidth: 100,
+     alignItems: 'center',
+     justifyContent: 'space-around'
    }
 };
+
+
+
+
+
+
+
+
+
+
 
 
 const images = {
@@ -66,39 +112,180 @@ const images = {
 };
 
 
+var Navigation = React.createClass({
+
+  getInitialState: function() {
+    return {
+      github: false,
+      demo: false
+    };
+  },
+
+  componentDidUpdate: function(prevProps, prevState) {
+    console.log('Navigation CDU', prevProps, prevState);
+  },
+
+  githubEnter: function(){
+    this.setState({github: true});
+  },
+
+  githubLeave: function(){
+    this.setState({github: false});
+  },
+
+  // demoEnter: function(){
+  //   this.setState({demo: true});
+  // },
+  //
+  // demoLeave: function(){
+  //   this.setState({demo: false});
+  // },
+
+
+  render: function() {
+
+    console.log('github',this.state.github);
+
+    var secondary = palette.traveltunes.secondary;
+
+
+    var github = this.state.github ?
+      <svg viewBox="0 0 40 40"  key="gh-icon" fill={palette.traveltunes.secondary}>
+        <g><path d="m7.7 17.5h-3.4c0 0-0.1 0.1-0.1 0.1v1.7c0 0.1 0.1 0.2 0.1 0.2h1.4v2s-0.3 0.1-1.1 0.1c-1 0-2.4-0.4-2.4-3.3 0-3 1.4-3.4 2.8-3.4 1.1 0 1.6 0.2 1.9 0.3 0.1 0.1 0.2 0 0.2-0.1l0.4-1.6c0 0-0.1-0.1-0.1-0.1-0.1-0.1-0.9-0.5-2.8-0.5-2.3 0-4.6 0.9-4.6 5.5 0 4.6 2.6 5.3 4.9 5.3 1.8 0 2.9-0.8 2.9-0.8 0.1 0 0.1-0.1 0.1-0.1v-5.2c0 0-0.1-0.1-0.2-0.1z m17-4.2h-1.9c-0.1 0-0.1 0-0.1 0.1v3.7h-3v-3.7c0-0.1 0-0.1-0.1-0.1h-1.9c-0.1 0-0.2 0-0.2 0.1v9.9c0 0.1 0.1 0.2 0.2 0.2h1.9c0.1 0 0.1-0.1 0.1-0.2v-4.2h3l0 4.2c0 0.1 0 0.2 0.1 0.2h1.9c0.1 0 0.2-0.1 0.2-0.2l0-9.9c0-0.1-0.1-0.2-0.2-0.2z m-14.7 0.2c-0.7 0-1.2 0.5-1.2 1.2s0.5 1.2 1.2 1.2 1.2-0.5 1.2-1.2c0-0.7-0.6-1.2-1.2-1.2z m1.1 3.2c0-0.1-0.1-0.2-0.2-0.2h-1.9c-0.1 0-0.1 0.1-0.1 0.2v6.5c0 0.2 0.1 0.3 0.2 0.3h1.7c0.2 0 0.3-0.1 0.3-0.3 0-0.3 0-1.7 0-2 0-0.2 0-4.5 0-4.5z m21-0.2h-1.9c-0.1 0-0.2 0.1-0.2 0.2v4.8s-0.5 0.4-1.1 0.4c-0.7 0-0.9-0.3-0.9-1v-4.2c0-0.1-0.1-0.2-0.1-0.2h-2c0 0-0.1 0.1-0.1 0.2v4.5s1.1 2.5 2.6 2.5c1.2 0 2.2-0.7 2.2-0.7s0.1 0.4 0.1 0.4c0 0 0.1 0.1 0.2 0.1h1.2c0 0 0.1-0.1 0.1-0.2l0-6.6c0-0.1-0.1-0.2-0.1-0.2z m5.1-0.2c-1.1 0-1.8 0.5-1.8 0.5v-3.4c0-0.1-0.1-0.1-0.1-0.1h-1.9c-0.1 0-0.2 0-0.2 0.1l0 9.9c0 0.1 0.1 0.2 0.2 0.2h1.3c0 0 0.1-0.1 0.1-0.1 0-0.1 0.1-0.5 0.1-0.5s0.8 0.8 2.2 0.8c1.8 0 2.8-0.9 2.8-4 0-3-1.6-3.4-2.7-3.4z m-0.7 5.6c-0.7 0-1.1-0.3-1.1-0.3v-3.2s0.4-0.3 0.9-0.3c0.7-0.1 1.4 0.1 1.4 1.8 0 1.7-0.3 2-1.2 2z m-20-0.1c0 0-0.3 0.1-0.5 0.1-0.7 0-0.9-0.4-0.9-0.8v-2.8h1.4c0.1 0 0.2 0 0.2-0.1v-1.5c0-0.1-0.1-0.2-0.2-0.2h-1.4l0-1.9c0-0.1-0.1-0.1-0.1-0.1h-2c0 0-0.1 0-0.1 0.1v2s-1 0.2-1 0.2c-0.1 0-0.1 0.1-0.1 0.2v1.2c0 0.1 0 0.1 0.1 0.1h1v3c0 2.1 1.5 2.4 2.6 2.4 0.4 0 1-0.2 1.1-0.2 0.1 0 0.1-0.1 0.1-0.2l0-1.3c0-0.1-0.1-0.2-0.2-0.2z"/></g>
+      </svg> :
+      <svg viewBox="0 0 40 40" key="code-icon" fill={palette.traveltunes.secondary}>
+        <g><path d="m26.3 7.5l-3.8 3.8 8.8 8.7-8.8 8.8 3.8 3.7 11.2-12.5-11.2-12.5z m-12.5 0l-11.3 12.5 11.3 12.5 3.7-3.7-8.7-8.8 8.7-8.7-3.7-3.8z"/></g>
+      </svg>;
+
+    var demo = !this.state.demo && false ?
+      <svg width="27.5" height="40" viewBox="0 0 40 40"key="tt-icon" fill={palette.traveltunes.secondary}>
+        <path d="M 21.149 1.249 L 22.617 2.159 L 23.922 3.278 L 24.514 3.968 L 17.468 3.968 L 17.468 11.594 L 17.145 11.458 L 16.595 11.322 L 16.014 11.275 L 15.434 11.322 L 14.884 11.458 L 14.37 11.675 L 13.901 11.966 L 13.484 12.324 L 13.127 12.741 L 12.836 13.21 L 12.618 13.723 L 12.482 14.273 L 12.435 14.853 L 12.482 15.433 L 12.618 15.983 L 12.836 16.496 L 13.127 16.965 L 13.484 17.382 L 13.901 17.74 L 14.37 18.031 L 14.884 18.248 L 15.434 18.384 L 16.014 18.431 L 16.595 18.384 L 17.145 18.248 L 17.659 18.031 L 18.128 17.74 L 18.545 17.382 L 18.903 16.965 L 19.194 16.496 L 19.411 15.983 L 19.547 15.433 L 19.593 14.853 L 19.593 7.122 L 26.404 7.122 L 26.63 7.658 L 27.054 9.382 L 27.2 11.201 L 26.886 13.824 L 26.034 16.589 L 24.78 19.397 L 23.257 22.15 L 21.6 24.749 L 19.942 27.097 L 18.418 29.094 L 17.164 30.642 L 16.313 31.644 L 16 31.999 L 15.687 31.644 L 14.836 30.642 L 13.582 29.094 L 12.058 27.097 L 10.401 24.749 L 8.744 22.15 L 7.22 19.397 L 5.966 16.589 L 5.114 13.824 L 4.8 11.201 L 4.946 9.382 L 5.37 7.658 L 6.049 6.051 L 6.959 4.583 L 8.078 3.279 L 9.382 2.16 L 10.85 1.25 L 12.457 0.572 L 14.181 0.148 L 16 0.002 L 17.819 0.148 L 19.543 0.572 L 21.15 1.25 Z"/>
+      </svg> :
+      <svg viewBox="0 0 40 40" key="link-icon" fill={palette.traveltunes.secondary}>
+        <g><path d="m30 30h-20v-19.9l5-0.1v-5h-10v30h30v-12.5h-5v7.5z m-10-25l5 5-7.5 7.5 5 5 7.5-7.5 5 5v-15h-15z"/></g>
+      </svg>;
+
+
+
+    return (
+      <div style={styles.projectNav}>
+        <div style={styles.projectIcons}>
+
+          <Link
+            to="projects/traveltunes/"
+            className="tt-nav"
+            activeClassName="active-nav"
+            onlyActiveOnIndex={true}
+          >
+            <Info color={secondary} size={32}/>
+          </Link>
+
+          <Link
+            to="projects/traveltunes/screenshots"
+            className="tt-nav"
+            activeClassName="active-nav"
+          >
+            <Images color={secondary} size={38}/>
+          </Link>
+
+          <Link
+            to="projects/traveltunes/built-with"
+            className="tt-nav"
+            activeClassName="active-nav"
+          >
+            <Tools size={36} color={secondary} />
+          </Link>
+
+          <a
+            href="https://github.com/bearshuford/travel-tunes"
+            target="_blank"
+            className="tt-nav"
+            style={{padding: 6, margin: 0}}
+            onMouseEnter={this.githubEnter}
+            onMouseLeave={this.githubLeave}
+            >
+            <MorphReplace duration={400} height={40}>
+              {github}
+            </MorphReplace>
+          </a>
+
+          <a
+            href="https://bearshuford.github.io/travel-tunes"
+            target="_blank"
+            className="tt-nav"
+            style={{}}
+
+            >
+
+            <MorphReplace
+              duration={400}
+              width={32}
+              height={32}
+            >
+              {demo}
+            </MorphReplace>
+          </a>
+
+        </div>
+
+      </div>
+    );
+  }
+
+});
+
+
+
+
+
+
+export var Screenshots = React.createClass({
+
+  render: function() {
+    return (
+      <div style={styles.images}>
+
+        <img
+           style={styles.screenshot}
+           src={images.login}
+        />
+        <img
+          style={styles.screenshot}
+          src={images.play}
+        />
+        <img
+          style={styles.screenshot}
+          src={images.add}
+        />
+
+      </div>
+
+    );
+  }
+
+});
+
+
+
+
+
+
 var TravelTunes = React.createClass({
 
   render: function() {
+
     return (
       <div style={styles.tt}>
         <div style={styles.top}>
           <div style={styles.details}>
-            <h1 style={styles.title}>Travel Tunes</h1>
+            <h1 style={styles.title}>TravelTunes</h1>
           </div>
-            <div style={styles.description}> final project for The Iron Yard</div>
+          <div style={styles.description}> final project for The Iron Yard</div>
         </div>
 
+        <Navigation/>
 
-
-
-        <div style={styles.images}>
-
-          <img
-             style={styles.screenshot}
-             src={images.login}
-          />
-          <img
-            style={styles.screenshot}
-            src={images.play}
-          />
-          <img
-            style={styles.screenshot}
-            src={images.add}
-          />
-        </div>
-
-
-
+        {this.props.children}
 
      </div>
 

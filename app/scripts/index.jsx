@@ -5,7 +5,7 @@ import { render } from 'react-dom'
 
 import App from './components/app.jsx';
 import About from './components/about.jsx';
-import TravelTunes from './components/traveltunes.jsx';
+import TravelTunes, {Screenshots} from './components/traveltunes.jsx';
 
 const history = new createHashHistory();
 
@@ -15,8 +15,11 @@ render((
       <IndexRedirect to="/about" />
       <Route path="about" component={About}/>
       <Route path="projects">
-        <IndexRedirect to="travel-tunes" />
-        <Route path="travel-tunes" component={TravelTunes}/>
+        <IndexRedirect to="traveltunes" />
+        <Route path="traveltunes" component={TravelTunes}>
+          <Route path="screenshots" component={Screenshots}/>
+          <Route path="built-with"/>
+        </Route>
       </Route>
     </Route>
   </Router>
