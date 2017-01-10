@@ -1,5 +1,6 @@
  import React from 'react'
 
+
 const styles = {
   about: {
     display: 'flex',
@@ -7,17 +8,15 @@ const styles = {
     width: '100%'
   },
   intro: {
-    backgroundColor: '#2DC7FF',
-
+    backgroundColor: '#26C6DA',
     display: 'flex',
     flexFlow: 'row wrap-reverse',
     justifyContent: 'center',
     width: '100%',
     alignSelf: 'center',
     marginTop: 10,
-    marginBottom: 18,
+    marginBottom: 18
   },
-
   introParagraph: {
     fontSize: 24,
     maxWidth: 400,
@@ -25,9 +24,9 @@ const styles = {
     padding: '18px 18px',
     textAlign: 'center',
     lineHeight: '34px',
-    alignSelf: 'flex-start'
+    alignSelf: 'flex-start',
+    color: 'black'
   },
-
   introText: {
 
   },

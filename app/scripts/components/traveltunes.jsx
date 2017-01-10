@@ -6,7 +6,35 @@ const styles = {
       flexFlow: 'column nowrap',
       width: '100%',
       alignItems: 'center',
-      paddingTop: 20
+      paddingTop: 10
+   },
+   top: {
+     backgroundColor: '#26C6DA',
+    //  color: 'white',
+     display: 'flex',
+     flexFlow: 'row wrap-reverse',
+     justifyContent: 'space-around',
+     alignItems: 'flex-start',
+     width: '100%',
+    //  alignSelf: 'center',
+     marginTop: 0,
+     marginBottom: 18,
+     padding: '18px 0'
+
+   },
+   details: {
+     fontSize: 24,
+     maxWidth: 400,
+     minWidth: 0,
+    //  padding: '18px 18px',
+    padding: '18px 0',
+     textAlign: 'center',
+     lineHeight: '34px',
+    //  alignSelf: 'flex-start'
+   },
+   title: {
+     padding: 0,
+     margin: 0
    },
    images: {
       display: 'flex',
@@ -19,7 +47,13 @@ const styles = {
       flex: '0 0 auto',
       objectFit: 'scale-down',
       minWidth: 0,
-      margin: '6px 0'
+      margin: '24px 0'
+   },
+   description: {
+     paddingTop: 12,
+     paddingBottom: 0,
+     fontSize: 'calc(12px + 1vw)',
+     fontWeight: 300
    }
 };
 
@@ -36,6 +70,16 @@ var TravelTunes = React.createClass({
   render: function() {
     return (
       <div style={styles.tt}>
+        <div style={styles.top}>
+          <div style={styles.details}>
+            <h1 style={styles.title}>Travel Tunes</h1>
+          </div>
+            <div style={styles.description}> final project for The Iron Yard</div>
+        </div>
+
+
+
+
         <div style={styles.images}>
 
           <img

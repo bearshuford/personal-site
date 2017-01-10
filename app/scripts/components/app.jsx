@@ -3,6 +3,10 @@ import Radium from 'radium';
 
 import { Link } from 'react-router';
 
+
+var SocialGithub          = require('react-icons/lib/io/social-github');
+var SocialGithubOutline   = require('react-icons/lib/io/social-github');
+
 var Github = require('react-icons/lib/go/mark-github');
 var Mail   = require('react-icons/lib/io/paper-airplane');
 
@@ -39,7 +43,7 @@ const styles = {
   },
   link: {
     position: 'relative',
-    color: '#3185FC',
+    color: '#26C6DA',
     textDecoration: 'none',
     transition: 'all .3s ease'
   },
@@ -112,7 +116,7 @@ var Nav = React.createClass({
             style={{lineHeight: '42px'}}
             href="mailto:bearshuford@me.com"
           >
-            <Mail color="#3185FC" size={36}/>
+            <Mail color="#26C6DA" size={36}/>
           </a>
 
           <a
@@ -121,7 +125,7 @@ var Nav = React.createClass({
             target="_blank"
             href="https://www.github.com/bearshuford"
           >
-            <Github color="#3185FC" size={36}/>
+            <Github color="#26C6DA" size={36}/>
           </a>
 
 
