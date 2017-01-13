@@ -1,6 +1,8 @@
 import React from 'react';
 import _ from 'underscore';
 
+// import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+
 import { Link } from 'react-router';
 
 
@@ -81,6 +83,10 @@ const styles = {
     flexFlow: 'row nowrap',
     justifyContent: 'space-between',
     width: 112
+  },
+
+  children: {
+  width: '100%'
   }
 
 };
@@ -192,7 +198,11 @@ var App = React.createClass({
 
         <Nav theme={theme}/>
 
-        {this.props.children}
+        <div style={styles.children}>
+          {this.props.children}
+        </div>
+
+
 
       </div>
     );

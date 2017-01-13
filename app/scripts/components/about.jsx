@@ -7,7 +7,7 @@ const styles = {
     flexFlow: 'column nowrap',
     width: '100%'
   },
-  intro: {
+  banner: {
     backgroundColor: '#26C6DA',
     display: 'flex',
     flexFlow: 'row wrap-reverse',
@@ -59,7 +59,7 @@ var About = React.createClass({
     return (
       <div style={styles.about}>
 
-        <div style={styles.intro}>
+        <div id="banner" style={styles.banner}>
 
           <div style={styles.introParagraph}>
             { "I'm " } <span style={styles.name}> {' Bear Shuford, '} </span>

@@ -24,7 +24,7 @@ const styles = {
       alignItems: 'center',
       paddingTop: 10
    },
-   top: {
+   banner: {
      backgroundColor: palette.traveltunes.primary,
       color: 'white',
      display: 'flex',
@@ -117,7 +117,8 @@ var Navigation = React.createClass({
   getInitialState: function() {
     return {
       github: false,
-      demo: false
+      demo: false,
+      info: false
     };
   },
 
@@ -133,13 +134,21 @@ var Navigation = React.createClass({
     this.setState({github: false});
   },
 
-  // demoEnter: function(){
-  //   this.setState({demo: true});
-  // },
-  //
-  // demoLeave: function(){
-  //   this.setState({demo: false});
-  // },
+  demoEnter: function(){
+    this.setState({demo: true});
+  },
+
+  demoLeave: function(){
+    this.setState({demo: false});
+  },
+
+  infoEnter: function(){
+    this.setState({info: true});
+  },
+
+  infoLeave: function(){
+    this.setState({info: false});
+  },
 
 
   render: function() {
@@ -157,10 +166,10 @@ var Navigation = React.createClass({
         <g><path d="m26.3 7.5l-3.8 3.8 8.8 8.7-8.8 8.8 3.8 3.7 11.2-12.5-11.2-12.5z m-12.5 0l-11.3 12.5 11.3 12.5 3.7-3.7-8.7-8.8 8.7-8.7-3.7-3.8z"/></g>
       </svg>;
 
-    var demo = !this.state.demo && false ?
-      <svg width="27.5" height="40" viewBox="0 0 40 40"key="tt-icon" fill={palette.traveltunes.secondary}>
-        <path d="M 21.149 1.249 L 22.617 2.159 L 23.922 3.278 L 24.514 3.968 L 17.468 3.968 L 17.468 11.594 L 17.145 11.458 L 16.595 11.322 L 16.014 11.275 L 15.434 11.322 L 14.884 11.458 L 14.37 11.675 L 13.901 11.966 L 13.484 12.324 L 13.127 12.741 L 12.836 13.21 L 12.618 13.723 L 12.482 14.273 L 12.435 14.853 L 12.482 15.433 L 12.618 15.983 L 12.836 16.496 L 13.127 16.965 L 13.484 17.382 L 13.901 17.74 L 14.37 18.031 L 14.884 18.248 L 15.434 18.384 L 16.014 18.431 L 16.595 18.384 L 17.145 18.248 L 17.659 18.031 L 18.128 17.74 L 18.545 17.382 L 18.903 16.965 L 19.194 16.496 L 19.411 15.983 L 19.547 15.433 L 19.593 14.853 L 19.593 7.122 L 26.404 7.122 L 26.63 7.658 L 27.054 9.382 L 27.2 11.201 L 26.886 13.824 L 26.034 16.589 L 24.78 19.397 L 23.257 22.15 L 21.6 24.749 L 19.942 27.097 L 18.418 29.094 L 17.164 30.642 L 16.313 31.644 L 16 31.999 L 15.687 31.644 L 14.836 30.642 L 13.582 29.094 L 12.058 27.097 L 10.401 24.749 L 8.744 22.15 L 7.22 19.397 L 5.966 16.589 L 5.114 13.824 L 4.8 11.201 L 4.946 9.382 L 5.37 7.658 L 6.049 6.051 L 6.959 4.583 L 8.078 3.279 L 9.382 2.16 L 10.85 1.25 L 12.457 0.572 L 14.181 0.148 L 16 0.002 L 17.819 0.148 L 19.543 0.572 L 21.15 1.25 Z"/>
-      </svg> :
+    var demo = this.state.demo  ?
+    <svg viewBox="0 0 40 40" key="demo-text" fill={palette.traveltunes.secondary}>
+      <g><path d="m30 10h-5.4c1.9 1.3 3.6 3.5 4.2 5h1.2c2.5 0 5 2.5 5 5s-2.6 5-5 5h-7.5c-2.5 0-5-2.5-5-5 0-0.9 0.2-1.8 0.7-2.5h-5.4c-0.2 0.8-0.3 1.6-0.3 2.5 0 5 5 10 10 10h7.5s10-5 10-10-5-10-10-10z m-18.8 15h-1.2c-2.5 0-5-2.5-5-5s2.6-5 5-5h7.5c2.5 0 5 2.5 5 5 0 0.9-0.2 1.8-0.7 2.5h5.4c0.2-0.8 0.3-1.6 0.3-2.5 0-5-5-10-10-10h-7.5s-10 5-10 10 5 10 10 10h5.4c-1.9-1.2-3.6-3.5-4.2-5z"/></g>
+      </svg>:
       <svg viewBox="0 0 40 40" key="link-icon" fill={palette.traveltunes.secondary}>
         <g><path d="m30 30h-20v-19.9l5-0.1v-5h-10v30h30v-12.5h-5v7.5z m-10-25l5 5-7.5 7.5 5 5 7.5-7.5 5 5v-15h-15z"/></g>
       </svg>;
@@ -199,8 +208,7 @@ var Navigation = React.createClass({
           <a
             href="https://github.com/bearshuford/travel-tunes"
             target="_blank"
-            className="tt-nav"
-            style={{padding: 6, margin: 0}}
+            className="tt-nav code-icon"
             onMouseEnter={this.githubEnter}
             onMouseLeave={this.githubLeave}
             >
@@ -212,15 +220,15 @@ var Navigation = React.createClass({
           <a
             href="https://bearshuford.github.io/travel-tunes"
             target="_blank"
-            className="tt-nav"
-            style={{}}
-
+            className="tt-nav demo-icon"
+            onMouseEnter={this.demoEnter}
+            onMouseLeave={this.demoLeave}
             >
 
             <MorphReplace
               duration={400}
-              width={32}
-              height={32}
+              width={36}
+              height={36}
             >
               {demo}
             </MorphReplace>
@@ -276,7 +284,7 @@ var TravelTunes = React.createClass({
 
     return (
       <div style={styles.tt}>
-        <div style={styles.top}>
+        <div id="banner" style={styles.banner}>
           <div style={styles.details}>
             <h1 style={styles.title}>TravelTunes</h1>
           </div>
