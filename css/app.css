@@ -17,7 +17,8 @@ body {
 #root {
   font-family: "Raleway", sans-serif; }
 
-.nav-icon, .tt-nav, .tt-header {
+.nav-icon, .tt-nav, .tt-header,
+.bm-nav, .bm-header, .a-header, .a-nav {
   position: relative;
   -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
@@ -33,34 +34,40 @@ body {
     -webkit-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s; }
 
-.nav-icon:hover, .tt-nav:hover, .tt-header:hover {
+.nav-icon:hover, .tt-nav:hover, .tt-header:hover,
+.bm-nav:hover, .bm-header:hover,
+.a-nav:hover, .a-header:hover,
+.demo-icon:hover {
   -webkit-transform: scale(1.2);
   transform: scale(1.2);
-  -webkit-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s; }
-
-.code-icon:hover {
-  -webkit-transform: scale(1.3);
-  transform: scale(1.3);
   -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s; }
 
 .code-icon {
   padding: 0; }
 
+.code-icon:hover {
+  padding-top: 4px;
+  -webkit-transform: scale(1.4);
+  transform: scale(1.4);
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s; }
+
 svg {
   -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s; }
 
 .nav:before, .nav-icon:before,
-.tt-nav:before, .tt-header:before {
+.tt-nav:before, .tt-header:before,
+.bm-nav:before, .bm-header:before,
+.a-nav:before, .a-header:before {
   content: "";
   position: absolute;
   width: 100%;
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #26C6DA;
+  background-color: #FF4081;
   visibility: hidden;
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
@@ -70,18 +77,23 @@ svg {
 .code-icon:before, .demo-icon:before {
   height: 0; }
 
-.tt-nav:before {
-  background-color: #00C853; }
-
-.tt-header:before {
+.tt-header:before, .tt-nav:before {
   background-color: #1976D2; }
+
+.bm-nav:before, .bm-header:before {
+  background-color: #FF4081; }
+
+.a-nav:before, .a-header:before {
+  background-color: #B4DC7F; }
 
 .nav:hover {
   font-size: 58px;
   -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s; }
 
-.nav:hover:before, .nav-icon:hover:before, .tt-nav:hover:before, .tt-header:hover:before {
+.nav:hover:before, .nav-icon:hover:before,
+.tt-nav:hover:before, .tt-header:hover:before,
+.bm-nav:hover:before, .bm-header:hover:before {
   visibility: visible;
   -webkit-transform: scaleX(1);
   transform: scaleX(1);
@@ -92,4 +104,5 @@ svg {
   visibility: hidden;
   -webkit-transform: scaleX(0);
   transform: scaleX(0); }
+
 /*# sourceMappingURL=app.css.map */
