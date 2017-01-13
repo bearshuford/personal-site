@@ -16,19 +16,44 @@ var Mail   = require('react-icons/lib/io/paper-airplane');
 
 
 
+// $accordian:       #54565A;
+// $accordian-hover: #B4DC7F;
+// $lists:           #D7DAE5;
+// $lists-hover:     #B9CDDA;
+// $background:      #F7B1AB;
+
 
 export const palette = {
   about: {
-    primary: '#26C6DA',
+    primary: '#00BCD4',
+    secondary: '#FF4081',
     cn: "nav",                  //className
     iconCn: "nav-icon"
   },
+
   traveltunes: {
-    primary: '#1976D2',
-    secondary: '#00C853',
+    secondary: '#1976D2',
+    primary: '#00C853',
     cn: "tt-header nav",
-    iconCn: "tt-header"
+    iconCn: "tt-header",
+    navCn: "tt-nav"
   },
+
+  batchmaker: {
+    primary: '#00BCD4',
+    secondary: '#FF4081',
+    cn: "bm-header nav",
+    iconCn: "bm-header",
+    navCn: "bm-nav"
+  },
+
+  accordion: {
+    primary: '#F7B1AB',
+    secondary: '#B4DC7F',
+    cn: "a-header nav",
+    iconCn: "a-header",
+    navCn: "a-nav"
+  }
 
 }
 
@@ -38,6 +63,7 @@ const styles = {
     display: 'flex',
     flexFlow: 'column nowrap',
     alignItems: 'flex-start'
+
   },
   header: {
     display: 'flex',
@@ -46,7 +72,7 @@ const styles = {
     justifyContent: 'space-between',
     width: '100%',
     lineHeight: '70px',
-    padding: '0 16px',
+    padding: '0 6px',
     fontFamily: '"Raleway", sans-serif',
     fontSize: 48,
     lineHeight: '70px',
@@ -82,7 +108,8 @@ const styles = {
     display: 'flex',
     flexFlow: 'row nowrap',
     justifyContent: 'space-between',
-    width: 112
+    width: 112,
+    marginRight: 16
   },
 
   children: {
@@ -105,10 +132,10 @@ var Nav = React.createClass({
     var theme = this.props.theme;
 
     var linkStyle = _.clone(styles.link);
-    linkStyle.color = theme.primary;
+    linkStyle.color = theme.secondary;
 
 
-
+    console.log(theme.secondary);
 
 
     return (
@@ -150,7 +177,7 @@ var Nav = React.createClass({
             style={{lineHeight: '42px'}}
             href="mailto:bearshuford@me.com"
           >
-            <Mail color={theme.primary} size={36}/>
+            <Mail color={theme.secondary} size={36}/>
           </a>
 
           <a
@@ -159,7 +186,7 @@ var Nav = React.createClass({
             target="_blank"
             href="https://www.github.com/bearshuford"
           >
-            <Github color={theme.primary} size={36}/>
+            <Github color={theme.secondary} size={36}/>
           </a>
 
 
@@ -181,6 +208,10 @@ var App = React.createClass({
 
       if (path.indexOf("/projects/traveltunes") >= 0)
        return palette.traveltunes;
+     if (path.indexOf("/projects/batch-maker") >= 0)
+      return palette.batchmaker;
+      if (path.indexOf("/projects/accordion") >= 0)
+       return palette.accordion;
       else if (path.indexOf("/about") >= 0)
         return palette.about;
 
