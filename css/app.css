@@ -35,7 +35,22 @@ body {
 
 .nav-icon:hover, .tt-nav:hover, .tt-header:hover {
   -webkit-transform: scale(1.2);
-  transform: scale(1.2); }
+  transform: scale(1.2);
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s; }
+
+.code-icon:hover {
+  -webkit-transform: scale(1.3);
+  transform: scale(1.3);
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s; }
+
+.code-icon {
+  padding: 0; }
+
+svg {
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s; }
 
 .nav:before, .nav-icon:before,
 .tt-nav:before, .tt-header:before {
@@ -52,6 +67,9 @@ body {
   -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s; }
 
+.code-icon:before, .demo-icon:before {
+  height: 0; }
+
 .tt-nav:before {
   background-color: #00C853; }
 
@@ -59,12 +77,16 @@ body {
   background-color: #1976D2; }
 
 .nav:hover {
-  font-size: 58px; }
+  font-size: 58px;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s; }
 
 .nav:hover:before, .nav-icon:hover:before, .tt-nav:hover:before, .tt-header:hover:before {
   visibility: visible;
   -webkit-transform: scaleX(1);
-  transform: scaleX(1); }
+  transform: scaleX(1);
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s; }
 
 .active-nav:hover:before {
   visibility: hidden;
