@@ -14,6 +14,7 @@ var Mail   = require('react-icons/lib/io/paper-airplane');
 
 //TODO import Transition from 'react-inline-transition-group';
 
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 
 // $accordian:       #54565A;
@@ -55,7 +56,7 @@ export const palette = {
     navCn: "a-nav"
   }
 
-}
+};
 
 
 const styles = {
@@ -221,8 +222,10 @@ var App = React.createClass({
   },
 
   render: function() {
-    console.log('App', this.props.children, this.props);
-    var theme = this.getTheme(this.props.location.pathname);
+
+    var path = this.props.location.pathname;
+    var segment = path.split('/')[1] || 'root';
+    var theme = this.getTheme(path);
 
     return (
       <div style={styles.app}>
@@ -230,7 +233,7 @@ var App = React.createClass({
         <Nav theme={theme}/>
 
         <div style={styles.children}>
-          {this.props.children}
+          {React.cloneElement(this.props.children, { key: segment })}
         </div>
 
 

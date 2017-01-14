@@ -23,6 +23,7 @@
     "radium": "^0.18.1",
     "radium-grid": "^2.0.3",
     "react": "^15.4.1",
+    "react-addons-css-transition-group": "^15.4.2",
     "react-dom": "^15.4.1",
     "react-icons": "^2.2.3",
     "react-motion": "^0.4.7",

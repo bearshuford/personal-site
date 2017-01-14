@@ -116,12 +116,11 @@ export var BMScreenshots = React.createClass({
 
 
 
-
 var Banner = React.createClass({
 
   render: function() {
     return (
-      <div id="banner" style={styles.banner}>
+      <div style={styles.banner}>
         <div style={styles.details}>
           <h1 style={styles.title}>
             <Link

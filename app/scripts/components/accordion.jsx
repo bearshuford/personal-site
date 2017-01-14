@@ -26,7 +26,7 @@ const styles = {
    },
    banner: {
      backgroundColor: palette.accordion.primary,
-       color: 'white',
+      //  color: 'white',
      display: 'flex',
      flexFlow: 'row wrap-reverse',
      justifyContent: 'space-around',
@@ -105,14 +105,14 @@ var Banner = React.createClass({
 
   render: function() {
     return (
-      <div id="banner" style={styles.banner}>
+      <div style={styles.banner}>
         <div style={styles.details}>
           <h1 style={styles.title}>
 
             <Link
               to="projects/batch-maker/"
               className="project-arrow"
-              style={{color: 'white'}}
+              style={{color: 'black'}}
             >  <Left/>
             </Link>
 
