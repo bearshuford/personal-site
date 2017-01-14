@@ -17,6 +17,10 @@ body {
 #root {
   font-family: "Raleway", sans-serif; }
 
+#banner {
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s; }
+
 .nav-icon, .tt-nav, .tt-header,
 .bm-nav, .bm-header, .a-header, .a-nav {
   position: relative;
@@ -104,4 +108,5 @@ svg {
   visibility: hidden;
   -webkit-transform: scaleX(0);
   transform: scaleX(0); }
+
 /*# sourceMappingURL=app.css.map */
