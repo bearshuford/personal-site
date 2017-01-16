@@ -12,12 +12,10 @@ img {
 
 body {
   margin: 0;
-  padding: 0; }
-
-#root {
+  padding: 0;
   font-family: "Raleway", sans-serif; }
 
-#banner {
+svg {
   -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s; }
 
@@ -27,6 +25,14 @@ body {
   -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
   padding: 6px; }
+
+.bw-link {
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  position: 'relative'; }
+
+.code-icon {
+  padding: 0; }
 
 .active-nav {
   -webkit-transform: scale(1.2);
@@ -41,14 +47,11 @@ body {
 .nav-icon:hover, .tt-nav:hover, .tt-header:hover,
 .bm-nav:hover, .bm-header:hover,
 .a-nav:hover, .a-header:hover,
-.demo-icon:hover {
+.demo-icon:hover, .bw-link:hover {
   -webkit-transform: scale(1.2);
   transform: scale(1.2);
   -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s; }
-
-.code-icon {
-  padding: 0; }
 
 .code-icon:hover {
   padding-top: 4px;
@@ -57,14 +60,11 @@ body {
   -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s; }
 
-svg {
-  -webkit-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s; }
-
 .nav:before, .nav-icon:before,
 .tt-nav:before, .tt-header:before,
 .bm-nav:before, .bm-header:before,
-.a-nav:before, .a-header:before {
+.a-nav:before, .a-header:before,
+.bw-link:before {
   content: "";
   position: absolute;
   width: 100%;
@@ -78,7 +78,8 @@ svg {
   -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s; }
 
-.code-icon:before, .demo-icon:before {
+.code-icon:before, .demo-icon:before,
+.bw-link:before {
   height: 0; }
 
 .tt-header:before, .tt-nav:before {
@@ -90,6 +91,9 @@ svg {
 .a-nav:before, .a-header:before {
   background-color: #B4DC7F; }
 
+.bw-link:before {
+  background-color: black; }
+
 .nav:hover {
   font-size: 58px;
   -webkit-transition: all 0.3s ease 0s;
@@ -97,7 +101,8 @@ svg {
 
 .nav:hover:before, .nav-icon:hover:before,
 .tt-nav:hover:before, .tt-header:hover:before,
-.bm-nav:hover:before, .bm-header:hover:before {
+.bm-nav:hover:before, .bm-header:hover:before,
+.bw-link:hover:before {
   visibility: visible;
   -webkit-transform: scaleX(1);
   transform: scaleX(1);
@@ -108,5 +113,75 @@ svg {
   visibility: hidden;
   -webkit-transform: scaleX(0);
   transform: scaleX(0); }
+
+.pageSlider-enter {
+  -webkit-transform: translate3d(100%, 0, 0);
+          transform: translate3d(100%, 0, 0); }
+
+.pageSlider-enter.pageSlider-enter-active {
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  -webkit-transition: all 600ms;
+  transition: all 600ms; }
+
+.page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000px; }
+
+.pageSwap-leave {
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0); }
+
+.pageSwap-leave.pageSwap-leave-active {
+  -webkit-transform: translate3d(-100%, 0, 0);
+          transform: translate3d(-100%, 0, 0);
+  -webkit-transition: all ease-out 400ms;
+  transition: all ease-out 400ms; }
+
+.pageSwap-enter {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: translate3d(100%, 0, 0);
+          transform: translate3d(100%, 0, 0); }
+
+.pageSwap-enter.pageSwap-enter-active {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  -webkit-transition: all ease-out 400ms;
+  transition: all ease-out 400ms; }
+
+.reversePageSwap-leave {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0); }
+
+.reversePageSwap-leave.reversePageSwap-leave-active {
+  -webkit-transform: translate3d(100%, 0, 0);
+          transform: translate3d(100%, 0, 0);
+  -webkit-transition: all ease-out 400ms;
+  transition: all ease-out 400ms; }
+
+.reversePageSwap-enter {
+  -webkit-transform: translate3d(-100%, 0, 0);
+          transform: translate3d(-100%, 0, 0); }
+
+.reversePageSwap-enter.reversePageSwap-enter-active {
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  -webkit-transition: all ease-out 400ms;
+  transition: all ease-out 400ms; }
 
 /*# sourceMappingURL=app.css.map */
