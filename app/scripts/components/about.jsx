@@ -5,7 +5,8 @@ const styles = {
   about: {
     display: 'flex',
     flexFlow: 'column nowrap',
-    width: '100%'
+    width: '100%',
+     position: 'relative'
   },
   banner: {
     backgroundColor: '#26C6DA',
@@ -15,7 +16,8 @@ const styles = {
     width: '100%',
     alignSelf: 'center',
     marginTop: 10,
-    marginBottom: 18
+    marginBottom: 18,
+    minHeight: 168
   },
   introParagraph: {
     fontSize: 24,
@@ -24,7 +26,7 @@ const styles = {
     padding: '18px 18px',
     textAlign: 'center',
     lineHeight: '34px',
-    alignSelf: 'flex-start',
+    alignSelf: 'center',
     color: 'black'
   },
   introText: {
@@ -57,7 +59,7 @@ var About = React.createClass({
 
   render: function() {
     return (
-      <div style={styles.about}>
+      <div style={styles.about} className="page">
 
         <div id="banner" style={styles.banner}>
 

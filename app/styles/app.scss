@@ -1,3 +1,13 @@
+// TODO DRY it up
+
+
+$bs: #FF4081;
+
+$tt: #1976D2;
+$bm: #FF4081;
+$a:  #B4DC7F;
+
+$bw: black;
 
 *,
 *::before,
@@ -17,124 +27,238 @@ img {
 body {
   margin: 0;
   padding: 0;
+  font-family: "Raleway", sans-serif;
 }
 
-#root {
-   font-family: "Raleway", sans-serif;
+svg {
+    transition: all 0.4s ease 0s;
 }
-
 
 #banner {
-  transition: all 0.3s ease 0s;
+  transition: all 0.4s ease 0s;
+
 }
 
-.nav-icon,.tt-nav, .tt-header,
+
+.nav-icon, .tt-nav, .tt-header,
 .bm-nav, .bm-header, .a-header, .a-nav{
-  position: relative;
-  transition: all 0.3s ease 0s;
-  padding: 6px;
+  position:   relative;
+  transition: all 0.4s ease 0s;
+  padding:    6px;
 }
 
-
-.active-nav{
-  svg{
-    color: black !important;
-    transition: all 0.3s ease 0s;
-  }
-  transform: scale(1.2);
-  transition: all 0.3s ease 0s;
-}
-
-.nav-icon:hover, .tt-nav:hover, .tt-header:hover,
-.bm-nav:hover, .bm-header:hover,
-.a-nav:hover, .a-header:hover,
-.demo-icon:hover{
-  -webkit-transform: scale(1.2);
-  transform: scale(1.2);
-    transition: all 0.3s ease 0s;
+.bw-link {
+  transition: all 0.4s ease 0s;
+  position:   'relative';
 }
 
 .code-icon {
   padding: 0;
 }
 
+.active-nav{
+  svg{
+    color: black !important;
+    transition: all 0.4s ease 0s;
+  }
+  transform: scale(1.2);
+  transition: all 0.4s ease 0s;
+}
 
-.code-icon:hover {
-    padding-top: 4px;
-  -webkit-transform: scale(1.4);
-  transform: scale(1.4);
-    transition: all 0.3s ease 0s;
+.nav-icon:hover, .tt-nav:hover, .tt-header:hover,
+.bm-nav:hover, .bm-header:hover,
+.a-nav:hover, .a-header:hover,
+.demo-icon:hover, .bw-link:hover{
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+  transition: all 0.4s ease 0s;
 }
 
 
-
-
-
-svg {
-    transition: all 0.3s ease 0s;
+.code-icon:hover {
+  padding-top: 4px;
+  -webkit-transform: scale(1.4);
+  transform: scale(1.4);
+  transition: all 0.4s ease 0s;
 }
 
 .nav:before, .nav-icon:before,
 .tt-nav:before, .tt-header:before,
 .bm-nav:before, .bm-header:before,
-.a-nav:before, .a-header:before {
+.a-nav:before, .a-header:before,
+.bw-link:before {
   content: "";
   position: absolute;
   width: 100%;
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #FF4081;
+  background-color: $bs;
   visibility: hidden;
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
   -webkit-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
+  transition: all 0.4s ease 0s;
 }
 
-
-.code-icon:before, .demo-icon:before {
+.code-icon:before, .demo-icon:before,
+.bw-link:before {
   height: 0
 }
 
-
-
-.tt-header:before, .tt-nav:before  {
-  background-color: #1976D2;
+.tt-header:before, .tt-nav:before {
+  background-color: $tt;
 }
-
-
-
-
-
 .bm-nav:before, .bm-header:before  {
-  background-color:  #FF4081;
+  background-color:  $bm;
 }
-
 .a-nav:before, .a-header:before  {
-  background-color:  #B4DC7F;
+  background-color:  $a;
 }
-
-
-
-
+.bw-link:before {
+  background-color: $bw;
+}
 
 .nav:hover {
-   font-size: 58px;
-  transition: all 0.3s ease 0s;
+  font-size: 58px;
+  transition: all 0.4s ease 0s;
 }
 
 .nav:hover:before, .nav-icon:hover:before,
 .tt-nav:hover:before, .tt-header:hover:before,
-.bm-nav:hover:before, .bm-header:hover:before{
+.bm-nav:hover:before, .bm-header:hover:before,
+.a-nav:hover:before, .a-header:hover:before,
+.bw-link:hover:before{
   visibility: visible;
   -webkit-transform: scaleX(1);
   transform: scaleX(1);
-    transition: all 0.3s ease 0s;
+  transition: all 0.4s ease 0s;
 }
 
 .active-nav:hover:before {
   visibility: hidden;
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
+}
+
+
+
+
+.pageSlider-enter {
+  transform: translate3d(100%, 0, 0);
+}
+
+.pageSlider-enter.pageSlider-enter-active {
+  transform: translate3d(0, 0, 0);
+  transition: all 600ms;
+}
+
+.page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000px;
+}
+
+
+// https://medium.com/front-end-hacking/react-page-transition-animations-9d18c90a9831#.tkryxowhm
+
+.pageSwap-leave {
+
+  transform: translate3d(0, 0, 0);
+}
+
+.pageSwap-leave.pageSwap-leave-active {
+
+  transform: translate3d(-100%, 0, 0);
+  transition: all ease-out 500ms;
+}
+
+.pageSwap-enter {
+  position: absolute;
+  //  background-color: #EEE;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translate3d(100%, 0, 0);
+}
+
+.pageSwap-enter.pageSwap-enter-active {
+  position: absolute;
+  // background-color: #EEE;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translate3d(0, 0, 0);
+  transition: all ease-out 500ms;
+
+}
+
+.reversePageSwap-leave {
+  position: absolute;
+  width: 100%;
+   height: 100%;
+  top: 0px;
+  transform: translate3d(0, 0, 0);
+}
+
+.reversePageSwap-leave.reversePageSwap-leave-active {
+  transform: translate3d(100%, 0, 0);
+  transition: all ease-out 500ms;
+}
+
+.reversePageSwap-enter {
+  transform: translate3d(-100%, 0, 0);
+}
+
+.reversePageSwap-enter.reversePageSwap-enter-active {
+  transform: translate3d(0, 0, 0);
+  transition: all ease-out 500ms;
+}
+
+
+.pageUp-enter {
+  transform: translateY(100%);
+}
+
+.pageUp-enter.pageUp-enter-active {
+  transform: translateY(0%);
+}
+
+.pageUp-leave {
+  transform: translateY(0%);
+  transition:
+    transform .7s cubic-bezier(
+      0.680,
+      -0.550,
+      0.265,
+      3
+  );
+}
+
+.pageUp-leave.pageUp-leave-active {
+  transform: translateY(-100%);
+}
+
+
+.fade-enter {
+  opacity: 0;
+  transition: all 300ms ease-in-out;
+  transition-delay: 300ms;
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+}
+
+.fade-leave {
+  opacity: 1;
+  transition: all 300ms linear;
+}
+
+.fade-leave.fade-leave-active {
+  opacity: 0;
+  transform: translateX(-20rem);
 }
