@@ -20,17 +20,11 @@ var Mail   = require('react-icons/lib/io/paper-airplane');
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 
-// $accordian:       #54565A;
-// $accordian-hover: #B4DC7F;
-// $lists:           #D7DAE5;
-// $lists-hover:     #B9CDDA;
-// $background:      #F7B1AB;
-
 
 export const palette = {
   about: {
-    primary: '#00BCD4',
-    secondary: '#FF4081',
+    secondary: '#C2A83E',
+    primary: '#243E36',
     cn: "nav",                  //className
     iconCn: "nav-icon"
   },
@@ -73,7 +67,7 @@ const styles = {
   header: {
     position: 'relative',
     display: 'flex',
-    flexFlow: 'row wrap',
+    flexFlow: 'row wrap-reverse',
     alignItems: 'center',
     justifyContent: 'space-between',
     width: '100%',
@@ -81,12 +75,13 @@ const styles = {
     padding: '0 6px',
     fontFamily: '"Raleway", sans-serif',
     fontSize: 48,
-    lineHeight: '70px',
     marginTop: 6,
     marginBottom: 6
   },
   name: {
-    padding: 5
+    padding: 5,
+    marginRight: 12,
+    flex: '100 1 auto'
   },
   navItem: {
     transition: 'all .3s ease',
@@ -113,14 +108,17 @@ const styles = {
   icons: {
     display: 'flex',
     flexFlow: 'row nowrap',
-    justifyContent: 'space-between',
-    width: 112,
-    marginRight: 16
+    justifyContent: 'space-around',
+    flex: '1 0 112px',
+    minWidth: '120px'
+    // marginRight: 16
   },
 
   children: {
   width: '100%',
-  position: 'relative'
+  position: 'relative',
+  minHeight: 'calc(100vh - 100px)',
+  flex: 1
 
   }
 
@@ -164,13 +162,6 @@ const bear =
   	<path d="M9.8 16.25c0 0.8-0.8 1.45-1.8 1.45s-1.8-0.65-1.8-1.45 0.8-0.6 1.8-0.6 1.8-0.2 1.8 0.6z" fill="#3e4347"/>
   	<path d="M25.85 16.25c0 0.8-0.8 1.45-1.8 1.45s-1.8-0.65-1.8-1.45 0.8-0.6 1.8-0.6c1 0 1.8-0.2 1.8 0.6z" fill="#3e4347"/>
   </svg>;
-
-
-
-
-
-
-
 
 
 

@@ -1,5 +1,7 @@
  import React from 'react'
 
+ import {palette} from './app.jsx';
+
 
 const styles = {
   about: {
@@ -9,15 +11,15 @@ const styles = {
      position: 'relative'
   },
   banner: {
-    backgroundColor: '#26C6DA',
+    backgroundColor: palette.about.primary,
     display: 'flex',
     flexFlow: 'row wrap-reverse',
     justifyContent: 'center',
     width: '100%',
     alignSelf: 'center',
-    marginTop: 10,
+    // marginTop: 10,
     marginBottom: 18,
-    minHeight: 168
+    height: 168
   },
   introParagraph: {
     fontSize: 24,
@@ -27,7 +29,7 @@ const styles = {
     textAlign: 'center',
     lineHeight: '34px',
     alignSelf: 'center',
-    color: 'black'
+    color: 'white'
   },
   introText: {
 
@@ -38,10 +40,10 @@ const styles = {
     marginLeft: 4
   },
   aboutBody: {
-    fontFamily: '"Cabin", sans-serif',
+    fontFamily: '"Roboto", sans-serif',
     paddingLeft: 12,
     paddingRight: 40,
-    fontSize: 20,
+    fontSize: 'calc(12px + .8vw)',
     maxWidth: 800,
     alignSelf: 'center'
   },

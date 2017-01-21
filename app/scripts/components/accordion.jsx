@@ -24,7 +24,6 @@ const styles = {
      flexFlow: 'column nowrap',
      width: '100%',
      alignItems: 'center',
-     paddingTop: 10,
      textAlign: 'center',
      overflow: 'hidden'
    },
@@ -38,7 +37,9 @@ const styles = {
      textAlign: 'center'
    },
   info: {
-     paddingTop: 24,
+    fontFamily: '"Roboto", sans-serif',
+    padding: 18,
+    //  paddingTop: 24,
      textAlign: 'center',
      fontSize: 18,
      minHeight: 238
@@ -86,6 +87,7 @@ const styles = {
    maxWidth: '100vw'
   },
   description: {
+   fontFamily: '"Roboto", sans-serif',
    alignSelf: 'flex-start',
    paddingBottom: 0,
    padding: ' 12px 12px 0 12px',
@@ -151,10 +153,14 @@ const styles = {
      textAlign: 'center',
      paddingTop: 10,
      justifyContent: 'flex-start',
-    //  minHeight: '500px',
-     flex: 1
+     flex: 1,
+     minHeight: '30vh'
+   },
 
-   }
+   bwLabel: {
+     fontFamily: '"Roboto", sans-serif',
+     paddingBottom: 6
+   },
 
 };
 
@@ -216,7 +222,7 @@ var Tool = React.createClass({
             {this.props.title}
           </h1>
         </a>
-        <div style={{paddingBottom: 12}}>
+        <div style={styles.bwLabel}>
           {this.props.label}
         </div>
       </div>

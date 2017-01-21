@@ -18,9 +18,9 @@ const styles = {
     flexFlow: 'column nowrap',
     width: '100%',
     alignItems: 'center',
-    paddingTop: 10,
+    // paddingTop: 10,
     textAlign: 'center',
-    overflow: 'hidden'
+    overflow: 'scroll'
   },
 
   // banner
@@ -68,6 +68,7 @@ const styles = {
     paddingBottom: 0,
     padding: ' 12px 12px 0 12px',
     fontSize: 'calc(12px + 1vw)',
+    fontFamily: '"Roboto", sans-serif',
     fontWeight: 300
   },
 
@@ -90,7 +91,7 @@ const styles = {
     flex: '0 0 auto',
     objectFit: 'scale-down',
     minWidth: 0,
-    margin: '24px 0'
+    margin: '12px 0 36px'
   },
 
   // built with
@@ -99,8 +100,8 @@ const styles = {
     flexFlow: 'column nowrap',
     width: '100%',
     alignItems: 'center',
-    paddingTop: 10,
-    textAlign: 'center'
+    textAlign: 'center',
+    padding: 8
   },
   toolLink: {
     textDecoration: 'none',
@@ -121,16 +122,31 @@ const styles = {
     padding: '0 24px',
     lineHeight: '42px'
   },
+  bwLabel: {
+    fontFamily: '"Roboto", sans-serif',
+    paddingBottom: 12
+  },
 
   navTitle: {
     fontSize: 36,
     marginBottom: 16,
     marginTop: 12
  },
+
+
+
+
+
  info: {
-    paddingTop: 24,
-    textAlign: 'center',
-    fontSize: 18
+   fontFamily: '"Roboto", sans-serif',
+   paddingLeft: 12,
+   paddingRight: 40,
+   fontSize: 18,
+   maxWidth: 800,
+   minWidth: '80%',
+   alignSelf: 'center',
+   textAlign: 'center',
+   marginTop: 18
   },
   children: {
     position: 'relative',
@@ -141,7 +157,8 @@ const styles = {
     textAlign: 'center',
     paddingTop: 10,
     justifyContent: 'flex-start',
-    minHeight: '50vh'
+     flex: 1,
+    minHeight: '30vh'
   }
 };
 
@@ -222,7 +239,7 @@ var Tool = React.createClass({
             {this.props.title}
           </h1>
         </a>
-        <div style={{paddingBottom: 12}}>
+        <div style={styles.bwLabel}>
           {this.props.label}
         </div>
       </div>
