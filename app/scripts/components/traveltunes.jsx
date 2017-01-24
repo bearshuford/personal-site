@@ -139,14 +139,30 @@ const styles = {
 
  info: {
    fontFamily: '"Roboto", sans-serif',
-   paddingLeft: 12,
-   paddingRight: 40,
+   paddingLeft: 24,
+   paddingRight: 24,
    fontSize: 18,
-   maxWidth: 800,
-   minWidth: '80%',
+   maxWidth: 750,
+  //  minWidth: '80%',
    alignSelf: 'center',
-   textAlign: 'center',
+   textAlign: 'left',
    marginTop: 18
+  },
+
+  infoHeading: {
+    fontFamily: '"Raleway", sans-serif',
+    fontSize: 32,
+    fontWeight: 400,
+    marginBottom: 12,
+    marginTop: 16
+  },
+  requirements: {
+    marginTop: 0,
+    maxWidth: 800
+  },
+
+  requirement: {
+    marginBottom: 10
   },
   children: {
     position: 'relative',
@@ -176,14 +192,39 @@ export var TTInfo = React.createClass({
     return (
       <div style={styles.media}>
         <div style={styles.info}>
-          {'Final Project for '}
-          <a
-            href="https://www.theironyard.com/locations/greenville.html"
-            target="_blank"
-            style={styles.toolLink}
-          >
-            the Iron Yard - Greenville
-          </a>
+          <div>
+            {'Final Project for '}
+            <a
+              href="https://www.theironyard.com/locations/greenville.html"
+              target="_blank"
+              style={styles.toolLink}
+            >
+              the Iron Yard - Greenville
+            </a>
+            <p>
+              The final three weeks of the twelve week course focused completey on the final project.
+              I created an app for users to discover concerts that will be playing at their travel destinations.
+            </p>
+            <h3 style={styles.infoHeading}>Use</h3>
+              <ol style={styles.requirements}>
+                <li style={styles.requirement}>Create an account to add some trips.</li>
+                  <li style={styles.requirement}>Select a trip to view concerts you could see.</li>
+                  <li style={styles.requirement}>Select an artist to play samples of their top tracks on from Spotify (if available).</li>
+              </ol>
+            <h3 style={styles.infoHeading}>Requirements</h3>
+            <ul style={styles.requirements}>
+              <li style={styles.requirement}>You must make regular commits each day.</li>
+              <li style={styles.requirement}>You must use an MV* front end framework.</li>
+              <li style={styles.requirement}>Your app must use at least one Read/Write HTTP API and one 3rd Party API, and may use multiple APIs.</li>
+              <li style={styles.requirement}>Your app must save data, not just pull it down (i.e. it must be a "CRUD" app).</li>
+              <li style={styles.requirement}>Your app must have user authentication and authorization.</li>
+              <li style={styles.requirement}>You must include at least one image upload.</li>
+              <li style={styles.requirement}>Your UI must be responsive and work on both desktop and mobile.</li>
+            </ul>
+
+          </div>
+
+
         </div>
       </div>
     );

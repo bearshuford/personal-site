@@ -41,10 +41,10 @@ const styles = {
   },
   aboutBody: {
     fontFamily: '"Roboto", sans-serif',
-    paddingLeft: 12,
-    paddingRight: 40,
-    fontSize: 'calc(12px + .8vw)',
-    maxWidth: 800,
+    paddingLeft: 20,
+    paddingRight: 20,
+    fontSize: 20,
+    maxWidth: 760,
     alignSelf: 'center'
   },
   title: {
@@ -72,11 +72,20 @@ var About = React.createClass({
         </div>
 
         <div style={styles.aboutBody}>
-          <p>Gluten-free pitchfork kombucha art party street art, forage celiac church-key. Gochujang chia tumblr tote bag, tofu cardigan vexillologist 3 wolf moon venmo chicharrones vegan taxidermy shoreditch. </p>
+          <p>
+            The end of 2016 was also the end of an intense front-end web development program at the Iron Yard in Greenville.
+            I came out of it with a lot, including a fancy diploma and a lot of practical experience.
+          </p>
 
-            <p>Hammock ethical listicle umami stumptown. Single-origin coffee tumblr selfies,  Marfa vegan poke seitan venmo shoreditch. Forage offal brooklyn letterpress vegan keytar.</p>
+          <p>
+            Before that, I studied computer science at Clemson University. While enrolled,
+            I was Engineering Assistant at Carolina CoverTech for three summers.
+          </p>
 
-          <p>Raw denim disrupt church-key, cronut neutra typewriter narwhal ramps aesthetic 3 wolf moon +1 mixtape. Cred intelligentsia art party subway tile single-origin coffee. Poke occupy tilde. Butcher banjo wolf etsy sriracha, YOLO ugh readymade meggings tumeric letterpress paleo photo booth. Gochujang migas bicycle rights banh mi. Portland iceland tacos butcher bicycle rights.</p>
+          <p>
+            I'm looking for a job and I'm more than willing to relocate for the right one.
+          </p>
+
 
         </div>
 
