@@ -16,8 +16,8 @@ body {
   font-family: "Raleway", sans-serif; }
 
 svg {
-  -webkit-transition: all 0.4s ease 0s;
-  transition: all 0.4s ease 0s; }
+  -webkit-transition: color 0.4s ease 0s;
+  transition: color 0.4s ease 0s; }
 
 #banner {
   -webkit-transition: all 0.4s ease 0s;
@@ -79,7 +79,6 @@ svg {
   visibility: hidden;
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
-  -webkit-transition: all 0.3s ease 0s;
   -webkit-transition: all 0.4s ease 0s;
   transition: all 0.4s ease 0s; }
 
