@@ -35,12 +35,7 @@ const styles = {
      alignItems: 'center',
      textAlign: 'center'
    },
-  info: {
-    fontFamily: '"Roboto", sans-serif',
-     paddingTop: 24,
-     textAlign: 'center',
-     fontSize: 18
-   },
+
 
    images: {
       display: 'flex',
@@ -83,7 +78,7 @@ const styles = {
      padding: '8px 0',
      marginTop: 0,
      marginBottom: 18,
-     minHeight: 168
+     height: 168
     },
   bannerInner: {
    display: 'flex',
@@ -158,6 +153,33 @@ const styles = {
        fontFamily: '"Roboto", sans-serif',
        paddingBottom: 12
      },
+
+    info: {
+      fontFamily: '"Roboto", sans-serif',
+      paddingLeft: 24,
+      paddingRight: 24,
+      fontSize: 18,
+      maxWidth: 750,
+      alignSelf: 'center',
+      textAlign: 'left',
+      marginTop: 18
+    },
+
+    infoHeading: {
+      fontFamily: '"Raleway", sans-serif',
+      fontSize: 32,
+      fontWeight: 400,
+      marginBottom: 12,
+      marginTop: 16
+    },
+    requirements: {
+      marginTop: 0,
+      maxWidth: 800
+    },
+
+    requirement: {
+      marginBottom: 10
+    }
 };
 
 
@@ -204,10 +226,33 @@ export var BMInfo = React.createClass({
           >
             the Iron Yard - Greenville
           </a>
+          <p>
+            After two weeks of React, we were ready to build a full-blown CRUD application!
+             ...almost. No one in the cohort made the deadline and we recieved an extension.
+            Looking back, I'm convinced the dealine was a farce and the extension was planned.
+          </p>
+          <p>
+            I had to move on to the final project before finishing everything I planned.
+            The incomplete features will be implimented soon&trade;.
+          </p>
+          <h3 style={styles.infoHeading}>Use</h3>
+            <ol style={styles.requirements}>
+              <li style={styles.requirement}>create an account or sign in</li>
+              <li style={styles.requirement}>add recipes (servings, ingredients, etc)</li>
+              <li style={styles.requirement}>select a recipe to view details and adjust batch size</li>
+            </ol>
+          <h3 style={styles.infoHeading}>Objectives</h3>
+          <ul style={styles.requirements}>
+            <li style={styles.requirement}>demonstrate understanding of React.js components</li>
+            <li style={styles.requirement}>demonstrate understanding of Backbone routers, models and collections</li>
+            <li style={styles.requirement}>demonstrate user auth with a Parse backend</li>
+          </ul>
+
         </div>
       </div>
-    );
-  }
+  );
+}
+
 
 });
 

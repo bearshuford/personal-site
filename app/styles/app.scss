@@ -18,6 +18,8 @@ $bw: black;
 a {
   padding: 0;
   margin: 0;
+
+
 }
 
 img {
@@ -31,24 +33,27 @@ body {
 }
 
 svg {
-    transition: all 0.4s ease 0s;
+  -webkit-transition: color 0.4s ease 0s;
+    transition: color 0.4s ease 0s;
 }
 
 #banner {
-  transition: all 0.4s ease 0s;
-
+ -webkit-transition: all 0.4s ease 0s;
+transition: all 0.4s ease 0s;
 }
 
 
 .nav-icon, .tt-nav, .tt-header,
 .bm-nav, .bm-header, .a-header, .a-nav{
   position:   relative;
-  transition: all 0.4s ease 0s;
+ -webkit-transition: all 0.4s ease 0s;
+transition: all 0.4s ease 0s;
   padding:    4px;
 }
 
 .bw-link {
-  transition: all 0.4s ease 0s;
+ -webkit-transition: all 0.4s ease 0s;
+transition: all 0.4s ease 0s;
   position:   'relative';
 }
 
@@ -59,10 +64,12 @@ svg {
 .active-nav{
   svg{
     color: black !important;
-    transition: all 0.4s ease 0s;
+   -webkit-transition: all 0.4s ease 0s;
+transition: all 0.4s ease 0s;
   }
   transform: scale(1.2);
-  transition: all 0.4s ease 0s;
+ -webkit-transition: all 0.4s ease 0s;
+transition: all 0.4s ease 0s;
 }
 
 .nav-icon:hover, .tt-nav:hover, .tt-header:hover,
@@ -71,7 +78,8 @@ svg {
 .demo-icon:hover, .bw-link:hover{
   -webkit-transform: scale(1.2);
   transform: scale(1.2);
-  transition: all 0.4s ease 0s;
+ -webkit-transition: all 0.4s ease 0s;
+transition: all 0.4s ease 0s;
 }
 
 
@@ -80,7 +88,8 @@ svg {
   padding-top: 4px;
   -webkit-transform: scale(1.4);
   transform: scale(1.4);
-  transition: all 0.4s ease 0s;
+ -webkit-transition: all 0.4s ease 0s;
+transition: all 0.4s ease 0s;
 }
 
 .nav:before, .nav-icon:before,
@@ -98,8 +107,8 @@ svg {
   visibility: hidden;
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
-  -webkit-transition: all 0.3s ease 0s;
-  transition: all 0.4s ease 0s;
+  -webkit-transition: all 0.4s ease 0s;
+transition: all 0.4s ease 0s;
 }
 
 
@@ -128,7 +137,8 @@ svg {
 
 .nav:hover {
   font-size: 58px;
-  transition: all 0.4s ease 0s;
+ -webkit-transition: all 0.4s ease 0s;
+transition: all 0.4s ease 0s;
 }
 
 .nav:hover:before, .nav-icon:hover:before,
@@ -139,7 +149,8 @@ svg {
   visibility: visible;
   -webkit-transform: scaleX(1);
   transform: scaleX(1);
-  transition: all 0.4s ease 0s;
+ -webkit-transition: all 0.4s ease 0s;
+transition: all 0.4s ease 0s;
 }
 
 .active-nav:hover:before {

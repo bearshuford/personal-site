@@ -11,7 +11,7 @@ var Left    = require('react-icons/lib/io/chevron-left');
 var Right   = require('react-icons/lib/io/chevron-right');
 
 import ProjectNav from './ProjectNav.jsx';
-import {palette} from './app.jsx';
+import {palette}  from './app.jsx';
 
 
 
@@ -19,83 +19,71 @@ const projectTitle       = 'jQuery Accordion';
 const projectDescription = 'a simple accordion menu'
 
 const styles = {
-   tt: {
-     display: 'flex',
-     flexFlow: 'column nowrap',
-     width: '100%',
-     alignItems: 'center',
-     textAlign: 'center',
-     overflow: 'hidden'
-   },
+  tt: {
+   display: 'flex',
+   flexFlow: 'column nowrap',
+   width: '100%',
+   alignItems: 'center',
+   textAlign: 'center',
+   overflow: 'hidden'
+  },
 
 
-   media: {
-     width: '100%',
-     display: 'flex',
-     flexFlow: 'column nowrap',
-     alignItems: 'center',
-     textAlign: 'center'
-   },
-  info: {
-    fontFamily: '"Roboto", sans-serif',
-    padding: 18,
-    //  paddingTop: 24,
-     textAlign: 'center',
-     fontSize: 18,
-     minHeight: 238
-   },
+  media: {
+   width: '100%',
+   display: 'flex',
+   flexFlow: 'column nowrap',
+   alignItems: 'center',
+   textAlign: 'center'
+  },
+
 
 
    // banner
-   banner: {
-     backgroundColor: palette.accordion.primary,
-     color: 'white',
-     display: 'flex',
-     flexFlow: 'row nowrap',
-     justifyContent: 'space-between',
-     alignItems: 'center',
-     width: '100vw',
-     padding: '8px 0',
-     marginTop: 0,
-     marginBottom: 18,
-     minHeight: 168
-    },
+  banner: {
+    backgroundColor: palette.accordion.primary,
+    color: 'white',
+    display: 'flex',
+    flexFlow: 'row nowrap',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    width: '100vw',
+    padding: '8px 0',
+    marginTop: 0,
+    marginBottom: 18,
+    height: 168
+  },
   bannerInner: {
-   display: 'flex',
-   flexFlow: 'row wrap-reverse',
-   justifyContent: 'space-around',
-   alignContent: 'space-around',
-   alignItems: 'center',
-   minHeight: '136px',
-   flex: 1
+    display: 'flex',
+    flexFlow: 'row wrap-reverse',
+    justifyContent: 'space-around',
+    alignContent: 'space-around',
+    alignItems: 'center',
+     height: '100%',
+    flex: 1,
   },
   details: {
-   alignSelf: 'center',
-   fontSize: 24,
-   maxWidth: 400,
-   minWidth: 0,
-   textAlign: 'center'
+    alignSelf: 'center',
+    fontSize: 24,
+    maxWidth: 400,
+    minWidth: 0,
+    textAlign: 'center'
   },
   title: {
-   display: 'flex',
-   flexFlow: 'row nowrap',
-   margin: 0,
-   alignItems: 'center',
-   justifyContent: 'space-between',
-   fontSize: 'calc(34px + 1vw)',
-   minWidth: 200,
-   maxWidth: '100vw'
+
+    margin: 0,
+    fontSize: 'calc(34px + 1vw)',
+    minWidth: 200,
+    maxWidth: '100vw'
   },
   description: {
-   fontFamily: '"Roboto", sans-serif',
-   alignSelf: 'flex-start',
-   paddingBottom: 0,
-   padding: ' 12px 12px 0 12px',
-   fontSize: 'calc(12px + 1vw)',
-   fontWeight: 300
+    fontFamily: '"Roboto", sans-serif',
+    alignSelf: 'flex-start',
+    paddingBottom: 0,
+    padding: ' 12px 12px 0 12px',
+    fontSize: 'calc(12px + 1vw)',
+    fontWeight: 300
   },
-
-
 
 
    // built with
@@ -126,7 +114,6 @@ const styles = {
      padding: '0 24px',
      lineHeight: '42px'
    },
-
 
    images: {
       display: 'flex',
@@ -162,6 +149,33 @@ const styles = {
      paddingBottom: 6
    },
 
+   info: {
+     fontFamily: '"Roboto", sans-serif',
+     paddingLeft: 24,
+     paddingRight: 24,
+     fontSize: 18,
+     maxWidth: 750,
+     alignSelf: 'center',
+     textAlign: 'left',
+     marginTop: 18
+   },
+
+   infoHeading: {
+     fontFamily: '"Raleway", sans-serif',
+     fontSize: 32,
+     fontWeight: 400,
+     marginBottom: 12,
+     marginTop: 16
+   },
+   requirements: {
+     marginTop: 0,
+     maxWidth: 800
+   },
+
+   requirement: {
+     marginBottom: 10
+   }
+
 };
 
 
@@ -171,7 +185,6 @@ const images = {
 
 
 export var AScreenshots = React.createClass({
-
   render: function() {
     return (
       <div style={styles.media}>
@@ -181,9 +194,7 @@ export var AScreenshots = React.createClass({
       </div>
     );
   }
-
 });
-
 
 
 
@@ -201,9 +212,28 @@ export var AInfo = React.createClass({
           >
             the Iron Yard - Greenville
           </a>
+
+          <p>
+            We began the second quarter of our three month course by diving into jQuery.
+            The assignment was to recreate a simple accordion menu.
+          </p>
+          <p>
+            After a week of vanilla JavaScript, jQuery offered an immmense amount of encouragement.
+            My solution involved just ten lines of JavaScript – only four relatively concise lines for the accordion logic.
+          </p>
+
+
+          <h3 style={styles.infoHeading}>Objectives</h3>
+          <ul style={styles.requirements}>
+            <li style={styles.requirement}>demonstrate understanding of React.js components</li>
+            <li style={styles.requirement}>demonstrate understanding of Backbone routers, models and collections</li>
+            <li style={styles.requirement}>demonstrate user auth with a Parse backend</li>
+          </ul>
+
         </div>
       </div>
     );
+
   }
 
 });
@@ -262,6 +292,7 @@ export var ABuiltWith = React.createClass({
   }
 });
 
+
 var Banner = React.createClass({
 
   render: function() {
@@ -292,44 +323,6 @@ var Banner = React.createClass({
   }
 
 });
-
-
-
-//
-// var Banner = React.createClass({
-//
-//   render: function() {
-//     return (
-//       <div id="banner" style={styles.banner}>
-//         <div style={styles.details}>
-//           <h1 style={styles.title}>
-//
-//             <Link
-//               to="/projects/batch-maker/"
-//               className="project-arrow"
-//               style={{color: 'black'}}
-//             >  <Left/>
-//             </Link>
-//
-//             <div style={styles.titleText}>
-//               {projectTitle}
-//             </div>
-//
-//             <Link style={{visibility: 'hidden'}}>
-//               <Right/>
-//             </Link>
-//
-//           </h1>
-//         </div>
-//
-//         <div style={styles.description}>
-//           {projectDescription}
-//         </div>
-//       </div>
-//     );
-//   }
-//
-// });
 
 
 

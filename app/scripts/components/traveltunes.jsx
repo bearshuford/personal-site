@@ -18,7 +18,6 @@ const styles = {
     flexFlow: 'column nowrap',
     width: '100%',
     alignItems: 'center',
-    // paddingTop: 10,
     textAlign: 'center',
     overflow: 'scroll'
   },
@@ -35,7 +34,7 @@ const styles = {
     padding: '8px 0',
     marginTop: 0,
     marginBottom: 18,
-    minHeight: 168
+    height: 168
    },
   bannerInner: {
     display: 'flex',
@@ -43,7 +42,7 @@ const styles = {
     justifyContent: 'space-around',
     alignContent: 'space-around',
     alignItems: 'center',
-    minHeight: '136px',
+    height: '100%',
     flex: 1
   },
   details: {
