@@ -10,7 +10,7 @@ import { MorphReplace, MorphReplaceResize } from 'react-svg-morph';
 
 
 var SocialGithub          = require('react-icons/lib/io/social-github');
-var SocialGithubOutline   = require('react-icons/lib/io/social-github');
+var SocialGithubOutline   = require('react-icons/lib/io/social-github-outline');
 
 var Github = require('react-icons/lib/go/mark-github');
 var Mail   = require('react-icons/lib/io/paper-airplane');
@@ -71,11 +71,10 @@ const styles = {
     alignItems: 'center',
     justifyContent: 'space-between',
     width: '100%',
-    lineHeight: '70px',
+    // lineHeight: '70px',
     padding: '0 6px',
     fontFamily: '"Raleway", sans-serif',
     fontSize: 48,
-    marginTop: 6,
     marginBottom: 6
   },
   name: {
@@ -93,6 +92,7 @@ const styles = {
     position: 'relative',
     color: '#26C6DA',
     textDecoration: 'none',
+    padding: 3,
     transition: 'all .3s ease'
   },
   activeLink: {
@@ -110,8 +110,12 @@ const styles = {
     flexFlow: 'row nowrap',
     justifyContent: 'space-around',
     flex: '1 0 112px',
-    minWidth: '120px'
-    // marginRight: 16
+    minWidth: '180px',
+    alignItems: 'center',
+    height: 70,
+    marginRight: 4,
+    marginLeft: 4,
+    marginTop: 6
   },
 
   children: {
@@ -228,8 +232,6 @@ var App = React.createClass({
     var linkStyle = _.clone(styles.link);
     linkStyle.color = theme.secondary;
 
-    var bs = segment === 'about' ? bear : briefcase;
-
     return (
       <div style={styles.app}>
 
@@ -252,7 +254,7 @@ var App = React.createClass({
 
               <span key="nav2" style={styles.navItem}>
                 <Link
-                  className="nav"
+                  className={theme.cn}
                   key="projects"
                   to="projects"
                   style={linkStyle}
@@ -264,19 +266,27 @@ var App = React.createClass({
               </span>
             </div>
 
-            {/*<div style={{position: 'relative'}}>
-              <MorphReplace duration={400}>
-                {bs}
-              </MorphReplace>
-            </div>*/}
-
-
-
             <div style={styles.icons}>
 
               <a
                 className={theme.iconCn}
-                style={{lineHeight: '42px'}}
+                target="_blank"
+                href="docs/resume.pdf"
+              >
+                <svg
+                  height={44}
+                  width={44}
+                  viewBox="0 0 32 32"
+                  fill={theme.secondary}
+                  style={{verticalAlign: 'middle'}}
+                >
+                  <path d="M24.956 10.556c-0.044-0.181-0.125-0.313-0.219-0.425l-5.231-5.731c-0.119-0.131-0.256-0.194-0.413-0.275-0.181-0.094-0.381-0.1-0.587-0.1h-9.994c-0.775 0-1.481 0.6-1.481 1.431v20.95c0 0.837 0.706 1.619 1.481 1.619h15.194c0.775 0 1.325-0.781 1.325-1.619v-15.256c0-0.225-0.025-0.387-0.075-0.594zM19.094 6.938l3.625 3.969h-3.625v-3.969zM9.031 26.031v-20h8.063v5.106c0 0.925 0.837 1.769 1.756 1.769h4.181v13.125h-14z"/>
+                  <path d="M11.258 18.592c0-0.298 0.056-0.591 0.169-0.88s0.276-0.548 0.491-0.777 0.477-0.415 0.784-0.557c0.307-0.142 0.658-0.213 1.052-0.213 0.472 0 0.881 0.098 1.227 0.293s0.604 0.452 0.774 0.773l-1.024 0.729c-0.046-0.119-0.107-0.218-0.182-0.296s-0.159-0.14-0.251-0.186-0.187-0.078-0.285-0.096c-0.099-0.018-0.194-0.027-0.286-0.027-0.193 0-0.359 0.038-0.498 0.113s-0.255 0.174-0.344 0.296c-0.089 0.122-0.155 0.259-0.199 0.413s-0.066 0.306-0.066 0.457c0 0.17 0.025 0.332 0.076 0.488s0.124 0.293 0.22 0.413c0.096 0.119 0.214 0.214 0.354 0.286s0.297 0.106 0.471 0.106c0.092 0 0.186-0.010 0.282-0.031s0.189-0.055 0.278-0.104c0.090-0.048 0.17-0.11 0.241-0.185s0.127-0.169 0.168-0.279l1.093 0.653c-0.073 0.179-0.184 0.339-0.333 0.481s-0.319 0.261-0.509 0.358c-0.19 0.096-0.394 0.17-0.612 0.22s-0.43 0.076-0.636 0.076c-0.362 0-0.693-0.072-0.993-0.217s-0.559-0.335-0.777-0.574c-0.218-0.238-0.386-0.509-0.506-0.811s-0.179-0.61-0.179-0.921zM17.587 16.193l0.956 3.197 0.942-3.197h1.409l-1.794 4.881h-1.114l-1.815-4.881h1.416z"/>
+                </svg>
+              </a>
+
+              <a
+                className={theme.iconCn}
                 href="mailto:bearshuford@me.com"
               >
                 <Mail color={theme.secondary} size={36}/>
@@ -284,12 +294,12 @@ var App = React.createClass({
 
               <a
                 className={theme.iconCn}
-                style={{lineHeight: '42px'}}
                 target="_blank"
                 href="https://www.github.com/bearshuford"
               >
                 <Github color={theme.secondary} size={36}/>
               </a>
+
 
             </div>
 

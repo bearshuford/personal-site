@@ -202,24 +202,24 @@ export var TTInfo = React.createClass({
               the Iron Yard - Greenville
             </a>
             <p>
-              The final three weeks of the twelve week course focused completey on the final project.
+              The final three weeks of the twelve week course focused completely on the final project.
               I created an app for users to discover concerts that will be playing at their travel destinations.
             </p>
             <h3 style={styles.infoHeading}>Use</h3>
               <ol style={styles.requirements}>
                 <li style={styles.requirement}>Create an account to add some trips.</li>
                   <li style={styles.requirement}>Select a trip to view concerts you could see.</li>
-                  <li style={styles.requirement}>Select an artist to play samples of their top tracks on from Spotify (if available).</li>
+                  <li style={styles.requirement}>Select an artist to play samples of their top tracks from Spotify (if available).</li>
               </ol>
             <h3 style={styles.infoHeading}>Requirements</h3>
             <ul style={styles.requirements}>
-              <li style={styles.requirement}>You must make regular commits each day.</li>
-              <li style={styles.requirement}>You must use an MV* front end framework.</li>
-              <li style={styles.requirement}>Your app must use at least one Read/Write HTTP API and one 3rd Party API, and may use multiple APIs.</li>
-              <li style={styles.requirement}>Your app must save data, not just pull it down (i.e. it must be a "CRUD" app).</li>
-              <li style={styles.requirement}>Your app must have user authentication and authorization.</li>
-              <li style={styles.requirement}>You must include at least one image upload.</li>
-              <li style={styles.requirement}>Your UI must be responsive and work on both desktop and mobile.</li>
+              <li style={styles.requirement}>make regular commits each day</li>
+              <li style={styles.requirement}>use an MV* front end framework</li>
+              <li style={styles.requirement}>use at least one Read/Write HTTP API and one 3rd Party API</li>
+              <li style={styles.requirement}>save data, don't just pull it down (must be a "CRUD" app)</li>
+              <li style={styles.requirement}>have user authentication and authorization</li>
+              <li style={styles.requirement}>include at least one image upload</li>
+              <li style={styles.requirement}>have responsive ui and work on both desktop and mobile</li>
             </ul>
 
           </div>

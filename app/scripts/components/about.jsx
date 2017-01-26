@@ -73,7 +73,7 @@ var About = React.createClass({
 
         <div style={styles.aboutBody}>
           <p>
-            The end of 2016 was also the end of an intense front-end web development program at the Iron Yard in Greenville.
+            The end of 2016 was the end of an intense front-end web development program at the Iron Yard in Greenville, SC.
             I came out of it with a lot, including a fancy diploma and a lot of practical experience.
           </p>
 
