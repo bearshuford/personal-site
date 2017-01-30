@@ -43,34 +43,33 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 
 
-
 export const palette = {
   about: {
-    primary:   '#243E36',
-    secondary: '#C2A83E',
+    primary:   '#93032E',
+    secondary: '#93032E',
     cn:     "nav",           //className
     iconCn: "nav-icon"
   },
 
   traveltunes: {
-    primary:   '#00C853',
-    secondary: '#1976D2',
+    primary:   '#84A98C',
+    secondary: '#84A98C',
     cn:     "tt-header nav",
     iconCn: "tt-header",
     navCn:  "tt-nav"
   },
 
   batchmaker: {
-    primary:   '#00BCD4',
-    secondary: '#FF4081',
+    primary:   '#82735C',
+    secondary: '#82735C',
     cn:     "bm-header nav",
     iconCn: "bm-header",
     navCn:  "bm-nav"
   },
 
   accordion: {
-    primary:   '#F7B1AB',
-    secondary: '#B4DC7F',
+    primary:   '#574D68',
+    secondary: '#574D68',
     cn:     "a-header nav",
     iconCn: "a-header",
     navCn:  "a-nav"
@@ -85,12 +84,16 @@ const styles = {
   app: {
     display: 'flex',
     flexFlow: 'column nowrap',
-    alignItems: 'flex-start'
+    alignItems: 'flex-start',
+    width: '100vw',
+    height: '100vh',
+    // overflow: 'scroll',
+    position: 'relative'
   },
   header: {
     position: 'relative',
     display: 'flex',
-    flexFlow: 'row wrap-reverse',
+    flexFlow: 'row wrap',
     alignItems: 'center',
     justifyContent: 'space-between',
     width: '100%',
@@ -146,8 +149,10 @@ const styles = {
   children: {
   width: '100%',
   position: 'relative',
-  minHeight: 'calc(100vh - 100px)',
+  height: '100%',
+  overflow: 'scroll',
   flex: 1
+
 
   }
 
@@ -294,7 +299,7 @@ var App = React.createClass({
             <div style={styles.icons}>
 
               <a
-                className={theme.iconCn}
+                className={theme.iconCn + ' nav-icon'}
                 target="_blank"
                 href="docs/resume.pdf"
               >
@@ -311,14 +316,14 @@ var App = React.createClass({
               </a>
 
               <a
-                className={theme.iconCn}
+                className={theme.iconCn + ' nav-icon'}
                 href="mailto:bearshuford@me.com"
               >
                 <Mail color={theme.secondary} size={36}/>
               </a>
 
               <a
-                className={theme.iconCn}
+                className={theme.iconCn + ' nav-icon'}
                 target="_blank"
                 href="https://www.github.com/bearshuford"
               >
@@ -332,14 +337,14 @@ var App = React.createClass({
 
 
         <div style={styles.children}>
+            <ReactCSSTransitionGroup
+              transitionName={this.state.transitionName}
+              transitionEnterTimeout={500}
+              transitionLeaveTimeout={500}
+            >
+              {React.cloneElement(this.props.children, { key: segment })}
+            </ReactCSSTransitionGroup>
 
-          <ReactCSSTransitionGroup
-            transitionName={this.state.transitionName}
-            transitionEnterTimeout={500}
-            transitionLeaveTimeout={500}
-          >
-            {React.cloneElement(this.props.children, { key: segment })}
-          </ReactCSSTransitionGroup>
         </div>
 
 

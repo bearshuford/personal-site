@@ -21,13 +21,15 @@ const styles = {
      width: '100%',
      alignItems: 'center',
      justifyContent: 'center',
-     padding: 6
+     padding: 6,
+     marginTop: 28,
+     marginBottom: 24
    },
    projectIcons: {
      display: 'flex',
      flexFlow: 'row wrap',
      width: '100%',
-    maxWidth: 600,
+     maxWidth: 600,
      alignItems: 'center',
      justifyContent: 'space-around'
    }
@@ -140,7 +142,7 @@ var ProjectNavigation = React.createClass({
           <Link
             to={path}
             className={cn}
-            activeClassName="active-nav"
+            activeClassName="active-project-nav"
             onlyActiveOnIndex={true}
           > <Info color={color} size={34} />
           </Link>
@@ -148,14 +150,14 @@ var ProjectNavigation = React.createClass({
           <Link
             to={path+'screenshots'}
             className={cn}
-            activeClassName="active-nav"
+            activeClassName="active-project-nav"
           > <Images color={color} size={40} />
           </Link>
 
           <Link
             to={path+'built-with'}
             className={cn}
-            activeClassName="active-nav"
+            activeClassName="active-project-nav"
           > <Tools size={40} color={color} />
           </Link>
 

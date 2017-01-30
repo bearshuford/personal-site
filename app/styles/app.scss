@@ -1,11 +1,11 @@
 // TODO DRY it up
 
 
-$bs: #C2A83E;
+$bs: #93032E;
 
-$tt: #1976D2;
-$bm: #FF4081;
-$a:  #B4DC7F;
+$tt: #84A98C;
+$bm: #82735C;
+$a:  #574D68;
 
 $bw: black;
 
@@ -18,8 +18,6 @@ $bw: black;
 a {
   padding: 0;
   margin: 0;
-
-
 }
 
 img {
@@ -43,7 +41,7 @@ transition: all 0.4s ease 0s;
 }
 
 
-.nav-icon, .tt-nav, .tt-header,
+.nav, .nav-icon, .tt-nav, .tt-header,
 .bm-nav, .bm-header, .a-header, .a-nav{
   position:   relative;
  -webkit-transition: all 0.4s ease 0s;
@@ -63,14 +61,32 @@ transition: all 0.4s ease 0s;
 
 .active-nav{
   svg{
-    color: black !important;
+   color: black !important;
    -webkit-transition: all 0.4s ease 0s;
-transition: all 0.4s ease 0s;
+   transition: all 0.4s ease 0s;
   }
   transform: scale(1.2);
  -webkit-transition: all 0.4s ease 0s;
 transition: all 0.4s ease 0s;
 }
+
+
+
+.active-project-nav{
+  svg{
+  //  color: white !important;
+   -webkit-transition: all 0.4s ease 0s;
+   transition: all 0.4s ease 0s;
+  }
+  transform: scale(1.4);
+ -webkit-transition: all 0.4s ease 0s;
+transition: all 0.4s ease 0s;
+
+
+}
+
+
+
 
 .nav-icon:hover, .tt-nav:hover, .tt-header:hover,
 .bm-nav:hover, .bm-header:hover,
@@ -80,6 +96,14 @@ transition: all 0.4s ease 0s;
   transform: scale(1.2);
  -webkit-transition: all 0.4s ease 0s;
 transition: all 0.4s ease 0s;
+}
+
+.tt-header:hover, .bm-header:hover, .a-header:hover {
+  transform: scale(1.4);
+}
+
+.nav-icon:hover {
+  transform: scale(1.2);
 }
 
 
@@ -122,13 +146,14 @@ transition: all 0.4s ease 0s;
   height: 0
 }
 
-.tt-header:before, .tt-nav:before {
+
+.tt-header:before, .tt-header:before{
   background-color: $tt;
 }
-.bm-nav:before, .bm-header:before  {
+.bm-header:before , .bm-nav:before {
   background-color:  $bm;
 }
-.a-nav:before, .a-header:before  {
+.a-header:before , .a-nav:before {
   background-color:  $a;
 }
 .bw-link:before {
@@ -153,10 +178,12 @@ transition: all 0.4s ease 0s;
 transition: all 0.4s ease 0s;
 }
 
-.active-nav:hover:before {
+.active-nav:hover:before, .active-project-nav:hover:before  {
   visibility: hidden;
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
+  -webkit-transition: all 0.4s ease 0s;
+ transition: all 0.4s ease 0s;
 }
 
 

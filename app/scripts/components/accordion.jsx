@@ -19,13 +19,20 @@ const projectTitle       = 'jQuery Accordion';
 const projectDescription = 'a simple accordion menu'
 
 const styles = {
+  page: {
+    backgroundColor: palette.accordion.primary,
+    color: 'white'
+  },
+
   tt: {
+   backgroundColor: palette.accordion.primary,
    display: 'flex',
    flexFlow: 'column nowrap',
    width: '100%',
    alignItems: 'center',
+   justifyContent: 'flex-start',
    textAlign: 'center',
-   overflow: 'hidden'
+   position: 'relative'
   },
 
 
@@ -34,7 +41,9 @@ const styles = {
    display: 'flex',
    flexFlow: 'column nowrap',
    alignItems: 'center',
-   textAlign: 'center'
+   textAlign: 'center',
+   justifyContent: 'flex-start'
+
   },
 
 
@@ -49,9 +58,9 @@ const styles = {
     alignItems: 'center',
     width: '100vw',
     padding: '8px 0',
-    marginTop: 0,
-    marginBottom: 18,
-    height: 168
+    marginTop: 10,
+    marginBottom: 10,
+    height: 148
   },
   bannerInner: {
     display: 'flex',
@@ -97,7 +106,7 @@ const styles = {
    },
    toolLink: {
      textDecoration: 'none',
-     color: 'black',
+     color: 'white',
      fontWeight: 600
    },
    toolTitle: {
@@ -121,7 +130,7 @@ const styles = {
       maxWidth: 600,
       minWidth: 20,
       alignItems: 'center',
-      justifyContent: 'center',
+      justifyContent: 'flex-start',
       overflow:'hidden'
    },
    screenshot: {
@@ -141,7 +150,7 @@ const styles = {
      paddingTop: 10,
      justifyContent: 'flex-start',
      flex: 1,
-     minHeight: '30vh'
+    //  minHeight: '30vh'
    },
 
    bwLabel: {
@@ -157,15 +166,18 @@ const styles = {
      maxWidth: 750,
      alignSelf: 'center',
      textAlign: 'left',
-     marginTop: 18
+     marginTop: 18,
+     fontWeight: 300,
+     marginBottom: 24
    },
 
    infoHeading: {
      fontFamily: '"Raleway", sans-serif',
      fontSize: 32,
-     fontWeight: 400,
+     fontWeight: 600,
      marginBottom: 12,
-     marginTop: 16
+     marginTop: 18,
+     paddingTop: 6
    },
    requirements: {
      marginTop: 0,
@@ -202,36 +214,37 @@ export var AInfo = React.createClass({
 
   render: function() {
     return (
-      <div style={styles.media}>
-        <div style={styles.info}>
-          {'Week 4 Monday assignment for '}
-          <a
-            href="https://www.theironyard.com/locations/greenville.html"
-            target="_blank"
-            style={styles.toolLink}
-          >
-            the Iron Yard - Greenville
-          </a>
+        <div style={styles.media}>
+          <div style={styles.info}>
+            {'Week 4 Monday assignment for '}
+            <a
+              href="https://www.theironyard.com/locations/greenville.html"
+              target="_blank"
+              style={styles.toolLink}
+            >
+              the Iron Yard - Greenville
+            </a>
 
-          <p>
-            We began the second quarter of our three month course by diving into jQuery.
-            The assignment was to recreate a simple accordion menu.
-          </p>
-          <p>
-            After a week of vanilla JavaScript, jQuery offered an immmense amount of encouragement.
-            My solution involved just ten lines of JavaScript – only four relatively concise lines for the accordion logic.
-          </p>
+            <p>
+              We began the second quarter of our three month course by diving into jQuery.
+              The assignment was to recreate a simple accordion menu.
+            </p>
+            <p>
+              After a week of vanilla JavaScript, jQuery offered an immmense amount of encouragement.
+              My solution involved just ten lines of JavaScript – only four relatively concise lines for the accordion logic.
+            </p>
 
 
-          <h3 style={styles.infoHeading}>Objectives</h3>
-          <ul style={styles.requirements}>
-            <li style={styles.requirement}>demonstrate understanding of React.js components</li>
-            <li style={styles.requirement}>demonstrate understanding of Backbone routers, models and collections</li>
-            <li style={styles.requirement}>demonstrate user auth with a Parse backend</li>
-          </ul>
+            <h3 style={styles.infoHeading}>Objectives</h3>
+            <ul style={styles.requirements}>
+              <li style={styles.requirement}>demonstrate understanding of React.js components</li>
+              <li style={styles.requirement}>demonstrate understanding of Backbone routers, models and collections</li>
+              <li style={styles.requirement}>demonstrate user auth with a Parse backend</li>
+            </ul>
 
+          </div>
         </div>
-      </div>
+
     );
 
   }
@@ -367,11 +380,12 @@ var Accordion = React.createClass({
     var segment = path.split('/')[3] || 'info';
 
     return (
+      <div style={styles.page} className="page">
       <div style={styles.tt}>
         <Banner/>
 
         <ProjectNav
-          color={palette.accordion.secondary}
+          color={'white'}
           iconClassName={palette.accordion.iconCn}
           path="/projects/accordion/"
           linkPath="4.1.2-jquery-accordian"
@@ -387,6 +401,7 @@ var Accordion = React.createClass({
           { React.cloneElement(this.props.children, {key: segment}) }
         </ReactCSSTransitionGroup>
 
+      </div>
       </div>
 
     );

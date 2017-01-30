@@ -13,18 +13,23 @@ import ProjectNav from './ProjectNav.jsx';
 import {palette} from './app.jsx';
 
 const styles = {
+  page: {
+    backgroundColor: palette.traveltunes.primary
+  },
   tt: {
     display: 'flex',
     flexFlow: 'column nowrap',
     width: '100%',
     alignItems: 'center',
     textAlign: 'center',
-    overflow: 'scroll'
+    //  overflow: 'scroll',
+      position: 'relative',
+    backgroundColor: palette.traveltunes.primary,
+    color: 'white'
   },
 
   // banner
   banner: {
-    backgroundColor: palette.traveltunes.primary,
     color: 'white',
     display: 'flex',
     flexFlow: 'row nowrap',
@@ -32,9 +37,9 @@ const styles = {
     alignItems: 'center',
     width: '100vw',
     padding: '8px 0',
-    marginTop: 0,
-    marginBottom: 18,
-    height: 168
+    marginTop: 10,
+    marginBottom: 10,
+    height: 148
    },
   bannerInner: {
     display: 'flex',
@@ -58,9 +63,9 @@ const styles = {
     margin: 0,
     alignItems: 'center',
     justifyContent: 'space-between',
-    fontSize: 'calc(32px + 1.1vw)',
+    fontSize: 'calc(32px + 2vw)',
     minWidth: 200,
-    maxWidth: '100vw'
+    maxWidth: '80vw'
   },
   description: {
     alignSelf: 'flex-start',
@@ -104,7 +109,7 @@ const styles = {
   },
   toolLink: {
     textDecoration: 'none',
-    color: 'black',
+    color: 'inherit',
     fontWeight: 600
   },
   toolTitle: {
@@ -145,7 +150,8 @@ const styles = {
   //  minWidth: '80%',
    alignSelf: 'center',
    textAlign: 'left',
-   marginTop: 18
+   marginTop: 18,
+   fontWeight: 300
   },
 
   infoHeading: {
@@ -436,12 +442,13 @@ var TravelTunes = React.createClass({
     var segment = path.split('/')[3] || 'info';
 
     return (
+      <div className="page">
       <div style={styles.tt}>
 
         <Banner/>
 
         <ProjectNav
-          color={palette.traveltunes.secondary}
+          color={'white'}
           iconClassName={palette.traveltunes.iconCn}
           path="/projects/traveltunes/"
           linkPath="travel-tunes"
@@ -453,9 +460,11 @@ var TravelTunes = React.createClass({
           transitionName={this.state.transitionName}
           transitionEnterTimeout={500}
           transitionLeaveTimeout={500}
+          className="page"
         >
           { React.cloneElement(this.props.children, {key: segment}) }
         </ReactCSSTransitionGroup>
+     </div>
      </div>
 
    );

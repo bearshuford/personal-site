@@ -1,55 +1,62 @@
- import React from 'react'
+import React from 'react';
+import {Link} from 'react-router';
 
- import {palette} from './app.jsx';
+import {palette} from './app.jsx';
 
 
 const styles = {
+  page: {
+    backgroundColor: palette.about.primary
+  },
   about: {
+    backgroundColor: palette.about.primary,
     display: 'flex',
     flexFlow: 'column nowrap',
     width: '100%',
-     position: 'relative'
+    alignItems: 'flex-start',
+    // textAlign: 'center',
+    color: 'white'
   },
   banner: {
-    backgroundColor: palette.about.primary,
     display: 'flex',
     flexFlow: 'row wrap-reverse',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
     width: '100%',
     alignSelf: 'center',
     // marginTop: 10,
-    marginBottom: 18,
-    height: 168
+    // marginBottom: 18,
+    height: 158
   },
   introParagraph: {
     fontSize: 24,
-    maxWidth: 400,
+    // maxWidth: 400,
     minWidth: 0,
     padding: '18px 18px',
-    textAlign: 'center',
+    // textAlign: 'center',
     lineHeight: '34px',
     alignSelf: 'center',
-    color: 'white'
+    // color: 'white'
   },
   introText: {
 
   },
   name: {
-    fontWeight: 600,
+    fontWeight: 700,
     fontSize: 30,
     marginLeft: 4
   },
   aboutBody: {
+    position: 'relative',
     fontFamily: '"Roboto", sans-serif',
     paddingLeft: 20,
     paddingRight: 20,
-    fontSize: 20,
-    maxWidth: 760,
-    alignSelf: 'center'
+    fontSize: 18,
+    maxWidth: 660,
+    // alignSelf: 'flex-start',
+    fontWeight: 300
   },
   title: {
     fontSize: 48,
-    fontWeight: 300,
     margin: 0,
     padding: 0,
     paddingLeft: 8
@@ -61,7 +68,8 @@ var About = React.createClass({
 
   render: function() {
     return (
-      <div style={styles.about} className="page">
+      <div style={styles.page} className="page">
+      <div style={styles.about}>
 
         <div id="banner" style={styles.banner}>
 
@@ -72,24 +80,24 @@ var About = React.createClass({
         </div>
 
         <div style={styles.aboutBody}>
+
+
           <p>
-            The end of 2016 was the end of an intense front-end web development program at the Iron Yard in Greenville, SC.
-            I came out of it with a lot, including a fancy diploma and a lot of practical experience.
+            I'm looking for a job that will offer mentoring and challenge.
+            I'm more than willing to relocate for the right opportunity.
           </p>
 
           <p>
-            Before that, I studied computer science at Clemson University. While enrolled,
-            I was Engineering Assistant at Carolina CoverTech for three summers.
-          </p>
-
-          <p>
-            I'm looking for a job and I'm more than willing to relocate for the right one.
+            <Link>
+              
+            </Link>
           </p>
 
 
         </div>
 
       </div>
+    </div>
 
     );
   }

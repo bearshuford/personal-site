@@ -19,13 +19,19 @@ const projectTitle       = 'Batch Maker';
 const projectDescription = 'a recipe CRUD application';
 
 const styles = {
+  page: {
+    backgroundColor: palette.batchmaker.primary,
+    color: 'white'
+
+  },
    tt: {
      display: 'flex',
      flexFlow: 'column nowrap',
      width: '100%',
      alignItems: 'center',
      textAlign: 'center',
-     overflow: 'hidden'
+     backgroundColor: palette.batchmaker.primary,
+     position: 'relative'
    },
 
    media: {
@@ -35,7 +41,6 @@ const styles = {
      alignItems: 'center',
      textAlign: 'center'
    },
-
 
    images: {
       display: 'flex',
@@ -59,7 +64,6 @@ const styles = {
      width: '100%',
      alignItems: 'center',
      textAlign: 'center',
-    //  backgroundColor: 'white',
      paddingTop: 10,
      flex: 1,
     minHeight: '30vh'
@@ -76,9 +80,9 @@ const styles = {
      alignItems: 'center',
      width: '100vw',
      padding: '8px 0',
-     marginTop: 0,
-     marginBottom: 18,
-     height: 168
+     marginTop: 10,
+     marginBottom: 10,
+     height: 148
     },
   bannerInner: {
    display: 'flex',
@@ -86,7 +90,7 @@ const styles = {
    justifyContent: 'space-around',
    alignContent: 'space-around',
    alignItems: 'center',
-   minHeight: '136px',
+   height: '100%',
    flex: 1
   },
   details: {
@@ -132,7 +136,7 @@ const styles = {
      },
      toolLink: {
        textDecoration: 'none',
-       color: 'black',
+       color: 'white',
        fontWeight: 600
      },
      toolTitle: {
@@ -162,7 +166,8 @@ const styles = {
       maxWidth: 750,
       alignSelf: 'center',
       textAlign: 'left',
-      marginTop: 18
+      marginTop: 24,
+      fontWeight: 300
     },
 
     infoHeading: {
@@ -251,6 +256,7 @@ export var BMInfo = React.createClass({
         </div>
       </div>
   );
+
 }
 
 
@@ -395,26 +401,28 @@ var BatchMaker = React.createClass({
     var segment = path.split('/')[3] || 'info';
 
     return (
-      <div style={styles.tt}>
-        <Banner/>
+      <div style={styles.page} className="page">
+        <div style={styles.tt}>
+          <Banner/>
 
-        <ProjectNav
-          color={palette.batchmaker.secondary}
-          iconClassName={palette.batchmaker.iconCn}
-          path="/projects/batch-maker/"
-          linkPath="8.4-batch-maker"
-        />
+          <ProjectNav
+            color={'white'}
+            iconClassName={palette.batchmaker.iconCn}
+            path="/projects/batch-maker/"
+            linkPath="8.4-batch-maker"
+          />
 
-        <ReactCSSTransitionGroup
-          component="div"
-          style={styles.children}
-          transitionName={this.state.transitionName}
-          transitionEnterTimeout={500}
-          transitionLeaveTimeout={500}
-        >
-          { React.cloneElement(this.props.children, {key: segment}) }
-        </ReactCSSTransitionGroup>
+          <ReactCSSTransitionGroup
+            component="div"
+            style={styles.children}
+            transitionName={this.state.transitionName}
+            transitionEnterTimeout={500}
+            transitionLeaveTimeout={500}
+          >
+            { React.cloneElement(this.props.children, {key: segment}) }
+          </ReactCSSTransitionGroup>
 
+       </div>
      </div>
 
    );
