@@ -23,7 +23,7 @@ svg {
   -webkit-transition: all 0.4s ease 0s;
   transition: all 0.4s ease 0s; }
 
-.nav-icon, .tt-nav, .tt-header,
+.nav, .nav-icon, .tt-nav, .tt-header,
 .bm-nav, .bm-header, .a-header, .a-nav {
   position: relative;
   -webkit-transition: all 0.4s ease 0s;
@@ -48,6 +48,15 @@ svg {
     -webkit-transition: all 0.4s ease 0s;
     transition: all 0.4s ease 0s; }
 
+.active-project-nav {
+  -webkit-transform: scale(1.4);
+          transform: scale(1.4);
+  -webkit-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s; }
+  .active-project-nav svg {
+    -webkit-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s; }
+
 .nav-icon:hover, .tt-nav:hover, .tt-header:hover,
 .bm-nav:hover, .bm-header:hover,
 .a-nav:hover, .a-header:hover,
@@ -56,6 +65,14 @@ svg {
   transform: scale(1.2);
   -webkit-transition: all 0.4s ease 0s;
   transition: all 0.4s ease 0s; }
+
+.tt-header:hover, .bm-header:hover, .a-header:hover {
+  -webkit-transform: scale(1.4);
+          transform: scale(1.4); }
+
+.nav-icon:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2); }
 
 .code-icon:hover {
   padding-top: 4px;
@@ -75,7 +92,7 @@ svg {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #C2A83E;
+  background-color: #93032E;
   visibility: hidden;
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
@@ -90,14 +107,14 @@ svg {
 .bw-link:before {
   height: 0; }
 
-.tt-header:before, .tt-nav:before {
-  background-color: #1976D2; }
+.tt-header:before, .tt-header:before {
+  background-color: #84A98C; }
 
-.bm-nav:before, .bm-header:before {
-  background-color: #FF4081; }
+.bm-header:before, .bm-nav:before {
+  background-color: #82735C; }
 
-.a-nav:before, .a-header:before {
-  background-color: #B4DC7F; }
+.a-header:before, .a-nav:before {
+  background-color: #574D68; }
 
 .bw-link:before {
   background-color: black; }
@@ -118,10 +135,12 @@ svg {
   -webkit-transition: all 0.4s ease 0s;
   transition: all 0.4s ease 0s; }
 
-.active-nav:hover:before {
+.active-nav:hover:before, .active-project-nav:hover:before {
   visibility: hidden;
   -webkit-transform: scaleX(0);
-  transform: scaleX(0); }
+  transform: scaleX(0);
+  -webkit-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s; }
 
 .page {
   position: absolute;
