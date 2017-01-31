@@ -165,26 +165,26 @@ transition: all 0.4s ease 0s;
  -webkit-transition: all 0.4s ease 0s;
 transition: all 0.4s ease 0s;
 }
+//
+// .nav:hover:before, .nav-icon:hover:before,
+// .tt-nav:hover:before, .tt-header:hover:before,
+// .bm-nav:hover:before, .bm-header:hover:before,
+// .a-nav:hover:before, .a-header:hover:before,
+// .bw-link:hover:before{
+//   visibility: visible;
+//   -webkit-transform: scaleX(1);
+//   transform: scaleX(1);
+//  -webkit-transition: all 0.4s ease 0s;
+// transition: all 0.4s ease 0s;
+// }
 
-.nav:hover:before, .nav-icon:hover:before,
-.tt-nav:hover:before, .tt-header:hover:before,
-.bm-nav:hover:before, .bm-header:hover:before,
-.a-nav:hover:before, .a-header:hover:before,
-.bw-link:hover:before{
-  visibility: visible;
-  -webkit-transform: scaleX(1);
-  transform: scaleX(1);
- -webkit-transition: all 0.4s ease 0s;
-transition: all 0.4s ease 0s;
-}
-
-.active-nav:hover:before, .active-project-nav:hover:before  {
-  visibility: hidden;
-  -webkit-transform: scaleX(0);
-  transform: scaleX(0);
-  -webkit-transition: all 0.4s ease 0s;
- transition: all 0.4s ease 0s;
-}
+// .active-nav:hover:before, .active-project-nav:hover:before  {
+//   visibility: hidden;
+//   -webkit-transform: scaleX(0);
+//   transform: scaleX(0);
+//   -webkit-transition: all 0.4s ease 0s;
+//  transition: all 0.4s ease 0s;
+// }
 
 
 
