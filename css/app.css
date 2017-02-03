@@ -66,14 +66,6 @@ svg {
   -webkit-transition: all 0.4s ease 0s;
   transition: all 0.4s ease 0s; }
 
-.tt-header:hover, .bm-header:hover, .a-header:hover {
-  -webkit-transform: scale(1.4);
-          transform: scale(1.4); }
-
-.nav-icon:hover {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2); }
-
 .code-icon:hover {
   padding-top: 4px;
   -webkit-transform: scale(1.4);
@@ -119,8 +111,19 @@ svg {
 .bw-link:before {
   background-color: black; }
 
+.tt:hover {
+  color: #84A98C !important; }
+
+.bm:hover {
+  color: #82735C !important; }
+
+.a:hover {
+  color: #574D68 !important; }
+
 .tt, .bm, .a {
   font-size: 24px; }
+  .tt:before, .bm:before, .a:before {
+    background-color: white; }
 
 .nav:hover {
   font-size: 58px;
