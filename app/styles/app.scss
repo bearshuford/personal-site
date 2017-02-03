@@ -99,11 +99,11 @@ transition: all 0.4s ease 0s;
 }
 
 .tt-header:hover, .bm-header:hover, .a-header:hover {
-  transform: scale(1.4);
+  //  transform: scale(1.4);
 }
 
 .nav-icon:hover {
-  transform: scale(1.2);
+  // transform: scale(1.2);
 }
 
 
@@ -160,12 +160,24 @@ transition: all 0.4s ease 0s;
   background-color: $bw;
 }
 
+.tt:hover{
+  color: $tt !important;
+}
+
+.bm:hover{
+  color: $bm !important;
+}
+.a:hover{
+  color: $a !important;
+}
+
 
 
 .tt, .bm, .a{
-  // color: black !important;
   font-size: 24px;
-  // text-decoration: underline !important;
+  &:before{
+    background-color: white;
+  }
 }
 
 .nav:hover {

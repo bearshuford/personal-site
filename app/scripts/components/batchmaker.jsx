@@ -22,7 +22,6 @@ const styles = {
   page: {
     backgroundColor: palette.batchmaker.primary,
     color: 'white'
-
   },
    tt: {
      display: 'flex',
@@ -39,22 +38,22 @@ const styles = {
      display: 'flex',
      flexFlow: 'column nowrap',
      alignItems: 'center',
+     justifyContent: 'flex-start',
      textAlign: 'center'
    },
 
    images: {
       display: 'flex',
       flexFlow: 'row wrap',
-      maxWidth: 600,
-      minWidth: 20,
-      alignItems: 'center',
-      justifyContent: 'center'
+       maxWidth: 800,
+       alignItems: 'flex-start',
+       justifyContent: 'space-around'
    },
    screenshot: {
       flex: '0 0 auto',
       objectFit: 'scale-down',
       minWidth: 0,
-      margin: '24px 0'
+      margin: '0 12px 42px '
    },
 
    children: {
@@ -131,16 +130,17 @@ const styles = {
        flexFlow: 'column nowrap',
        width: '100%',
        alignItems: 'center',
-       paddingTop: 10,
-       textAlign: 'center'
+       textAlign: 'center',
+       padding: '0 8px 8px'
      },
      toolLink: {
        textDecoration: 'none',
-       color: 'white',
-       fontWeight: 600
+       color: 'inherit',
+       fontWeight: 600,
      },
      toolTitle: {
        marginBottom: 8,
+       marginTop: 0,
        position: 'relative',
        fontWeight: 300,
        fontSize: 42
@@ -155,7 +155,7 @@ const styles = {
      },
      bwLabel: {
        fontFamily: '"Roboto", sans-serif',
-       paddingBottom: 12
+       marginBottom: 42
      },
 
     info: {
@@ -166,7 +166,7 @@ const styles = {
       maxWidth: 750,
       alignSelf: 'center',
       textAlign: 'left',
-      marginTop: 24,
+      // marginTop: 24,
       fontWeight: 300
     },
 
@@ -238,7 +238,7 @@ export var BMInfo = React.createClass({
           </p>
           <p>
             I had to move on to the final project before finishing everything I planned.
-            The incomplete features will be implimented soon&trade;.
+            The incomplete features will be implemented soon.
           </p>
           <h3 style={styles.infoHeading}>Use</h3>
             <ol style={styles.requirements}>

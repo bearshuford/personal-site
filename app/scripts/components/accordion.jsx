@@ -79,7 +79,6 @@ const styles = {
     textAlign: 'center'
   },
   title: {
-
     margin: 0,
     fontSize: 'calc(34px + 1vw)',
     minWidth: 200,
@@ -101,16 +100,17 @@ const styles = {
      flexFlow: 'column nowrap',
      width: '100%',
      alignItems: 'center',
-     paddingTop: 10,
-     textAlign: 'center'
+     textAlign: 'center',
+     padding: '0 8px 8px'
    },
    toolLink: {
      textDecoration: 'none',
-     color: 'white',
-     fontWeight: 600
+     color: 'inherit',
+     fontWeight: 600,
    },
    toolTitle: {
      marginBottom: 8,
+     marginTop: 0,
      position: 'relative',
      fontWeight: 300,
      fontSize: 42
@@ -123,6 +123,12 @@ const styles = {
      padding: '0 24px',
      lineHeight: '42px'
    },
+   bwLabel: {
+     fontFamily: '"Roboto", sans-serif',
+     marginBottom: 38
+   },
+
+
 
    images: {
       display: 'flex',
@@ -153,10 +159,6 @@ const styles = {
     //  minHeight: '30vh'
    },
 
-   bwLabel: {
-     fontFamily: '"Roboto", sans-serif',
-     paddingBottom: 6
-   },
 
    info: {
      fontFamily: '"Roboto", sans-serif',

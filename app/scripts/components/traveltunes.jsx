@@ -105,15 +105,16 @@ const styles = {
     width: '100%',
     alignItems: 'center',
     textAlign: 'center',
-    padding: 8
+    padding: '0 8px 8px'
   },
   toolLink: {
     textDecoration: 'none',
     color: 'inherit',
-    fontWeight: 600
+    fontWeight: 600,
   },
   toolTitle: {
     marginBottom: 8,
+    marginTop: 0,
     position: 'relative',
     fontWeight: 300,
     fontSize: 42
@@ -128,7 +129,7 @@ const styles = {
   },
   bwLabel: {
     fontFamily: '"Roboto", sans-serif',
-    paddingBottom: 12
+    marginBottom: 42
   },
 
   navTitle: {
