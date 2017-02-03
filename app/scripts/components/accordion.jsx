@@ -237,9 +237,9 @@ export var AInfo = React.createClass({
 
             <h3 style={styles.infoHeading}>Objectives</h3>
             <ul style={styles.requirements}>
-              <li style={styles.requirement}>demonstrate understanding of React.js components</li>
-              <li style={styles.requirement}>demonstrate understanding of Backbone routers, models and collections</li>
-              <li style={styles.requirement}>demonstrate user auth with a Parse backend</li>
+              <li style={styles.requirement}>be familiar with the different jQuery DOM traversal and manipulation methods</li>
+              <li style={styles.requirement}>be familiar with jQuery event listeners</li>
+              <li style={styles.requirement}>understand how to modify styles dynamically by adding classes</li>
             </ul>
 
           </div>

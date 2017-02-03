@@ -147,17 +147,25 @@ transition: all 0.4s ease 0s;
 }
 
 
-.tt-header:before, .tt-header:before{
+.tt, .tt-header:before, .tt-header:before{
   background-color: $tt;
 }
-.bm-header:before , .bm-nav:before {
+.bm, .bm-header:before , .bm-nav:before {
   background-color:  $bm;
 }
-.a-header:before , .a-nav:before {
+.a, .a-header:before , .a-nav:before {
   background-color:  $a;
 }
 .bw-link:before {
   background-color: $bw;
+}
+
+
+
+.tt, .bm, .a{
+  // color: black !important;
+  font-size: 24px;
+  // text-decoration: underline !important;
 }
 
 .nav:hover {

@@ -63,7 +63,7 @@ const styles = {
     margin: 0,
     alignItems: 'center',
     justifyContent: 'space-between',
-    fontSize: 'calc(32px + 2vw)',
+    fontSize: 'calc(28px + 2.1vw)',
     minWidth: 200,
     maxWidth: '80vw'
   },
